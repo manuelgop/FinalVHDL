@@ -1,1 +1,4 @@
+vhdl work "SelAnodo.vhd"
+vhdl work "RefreshDisplay.vhd"
+vhdl work "DecBCD7Seg.vhd"
 vhdl work "Top.vhd"

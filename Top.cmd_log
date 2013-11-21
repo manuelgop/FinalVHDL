@@ -7,3 +7,8 @@ xst -intstyle ise -ifn "C:/Projects_SistDigAv/Ultrasonic/Top.xst" -ofn "C:/Proje
 xst -intstyle ise -ifn "C:/Projects_SistDigAv/Ultrasonic/Top.xst" -ofn "C:/Projects_SistDigAv/Ultrasonic/Top.syr" 
 xst -intstyle ise -ifn "C:/Projects_SistDigAv/Ultrasonic/Top.xst" -ofn "C:/Projects_SistDigAv/Ultrasonic/Top.syr" 
 xst -intstyle ise -ifn "C:/Projects_SistDigAv/Ultrasonic/Top.xst" -ofn "C:/Projects_SistDigAv/Ultrasonic/Top.syr" 
+xst -intstyle ise -ifn "C:/SistemasDigitalesAvanzados/Ultrasonic/Top.xst" -ofn "C:/SistemasDigitalesAvanzados/Ultrasonic/Top.syr" 
+xst -intstyle ise -ifn "C:/SistemasDigitalesAvanzados/Ultrasonic/Top.xst" -ofn "C:/SistemasDigitalesAvanzados/Ultrasonic/Top.syr" 
+xst -intstyle ise -ifn "C:/SistemasDigitalesAvanzados/Ultrasonic/Top.xst" -ofn "C:/SistemasDigitalesAvanzados/Ultrasonic/Top.syr" 
+xst -intstyle ise -ifn "C:/SistemasDigitalesAvanzados/Ultrasonic/Top.xst" -ofn "C:/SistemasDigitalesAvanzados/Ultrasonic/Top.syr" 
+xst -intstyle ise -ifn "C:/SistemasDigitalesAvanzados/Ultrasonic/Top.xst" -ofn "C:/SistemasDigitalesAvanzados/Ultrasonic/Top.syr" 

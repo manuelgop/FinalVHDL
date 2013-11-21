@@ -5,34 +5,52 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:\Projects_SistDigAv\Ultrasonic\Top.vhd" Line 54: &lt;<arg fmt="%s" index="1">clk1mhz</arg>&gt; remains a black-box since it has no binding entity.
+<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 47: &lt;<arg fmt="%s" index="1">clk1mhz</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:\Projects_SistDigAv\Ultrasonic\Top.vhd" Line 78: &lt;<arg fmt="%s" index="1">senalin</arg>&gt; remains a black-box since it has no binding entity.
+<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 71: &lt;<arg fmt="%s" index="1">senalin</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:\Projects_SistDigAv\Ultrasonic\Top.vhd" Line 70: &lt;<arg fmt="%s" index="1">senalout</arg>&gt; remains a black-box since it has no binding entity.
+<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 63: &lt;<arg fmt="%s" index="1">senalout</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:\Projects_SistDigAv\Ultrasonic\Top.vhd" Line 85: &lt;<arg fmt="%s" index="1">contador</arg>&gt; remains a black-box since it has no binding entity.
+<msg type="warning" file="HDLCompiler" num="89" delta="new" >"C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 79: &lt;<arg fmt="%s" index="1">contador</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Projects_SistDigAv\Ultrasonic\Top.vhd" Line 99: Net &lt;<arg fmt="%s" index="1">Rst</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 93: Net &lt;<arg fmt="%s" index="1">Rst</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 98: Net &lt;<arg fmt="%s" index="1">Sel_int[1]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 99: Net &lt;<arg fmt="%s" index="1">tiempo_int[3]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd</arg>&quot; line <arg fmt="%d" index="2">122</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">U4</arg>&gt; of block &lt;<arg fmt="%s" index="4">RefreshDisplay</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">Top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">Input</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Projects_SistDigAv\Ultrasonic\Top.vhd</arg>&quot; line <arg fmt="%s" index="2">146</arg>: Output port &lt;<arg fmt="%s" index="3">numM</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U7</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd</arg>&quot; line <arg fmt="%s" index="2">122</arg>: Output port &lt;<arg fmt="%s" index="3">ClkOut</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U4</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Projects_SistDigAv\Ultrasonic\Top.vhd</arg>&quot; line <arg fmt="%s" index="2">146</arg>: Output port &lt;<arg fmt="%s" index="3">numC</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U7</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd</arg>&quot; line <arg fmt="%s" index="2">142</arg>: Output port &lt;<arg fmt="%s" index="3">numM</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U7</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Projects_SistDigAv\Ultrasonic\Top.vhd</arg>&quot; line <arg fmt="%s" index="2">146</arg>: Output port &lt;<arg fmt="%s" index="3">numD</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U7</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd</arg>&quot; line <arg fmt="%s" index="2">142</arg>: Output port &lt;<arg fmt="%s" index="3">numC</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U7</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Projects_SistDigAv\Ultrasonic\Top.vhd</arg>&quot; line <arg fmt="%s" index="2">146</arg>: Output port &lt;<arg fmt="%s" index="3">numU</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U7</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd</arg>&quot; line <arg fmt="%s" index="2">142</arg>: Output port &lt;<arg fmt="%s" index="3">numD</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd</arg>&quot; line <arg fmt="%s" index="2">142</arg>: Output port &lt;<arg fmt="%s" index="3">numU</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U7</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">Sel_int</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">tiempo_int</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
 <msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">Rst</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.

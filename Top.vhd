@@ -20,36 +20,29 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity Top is
     Port ( Input     : in   STD_LOGIC;
            Output    : out  STD_LOGIC;
+			  Seg       : out  STD_LOGIC_VECTOR (7 downto 0);
+			  Disp      : out  STD_LOGIC_VECTOR (3 downto 0);
 			  Clk100MHz : in   STD_LOGIC);
 end Top;
 
 architecture Behavioral of Top is
 
---component SelAnodo
---	port (
---		Sel   : in  STD_LOGIC_VECTOR(1 downto 0);
---		Anodo : out  STD_LOGIC_VECTOR(3 downto 0)
---	);
---	end component;
---	
---component DecBCD7Seg
---	port (
---		BCD : in  STD_LOGIC_VECTOR(3 downto 0);
---		Seg : out  STD_LOGIC_VECTOR(7 downto 0)
---	);
---	end component;
+component SelAnodo
+	port (
+		Sel   : in  STD_LOGIC_VECTOR(1 downto 0);
+		Anodo : out  STD_LOGIC_VECTOR(3 downto 0)
+	);
+	end component;
+	
+component DecBCD7Seg
+	port (
+		BCD : in  STD_LOGIC_VECTOR(3 downto 0);
+		Seg : out  STD_LOGIC_VECTOR(7 downto 0)
+	);
+	end component;
 	
 component Clk1MHz
 	port (
@@ -82,6 +75,7 @@ component SenalIn
 	);
 	end component;
 	
+	
 component Contador
 	port (
 		Clk      : in STD_LOGIC;
@@ -101,20 +95,22 @@ signal NumM_int     : STD_LOGIC_VECTOR (3 downto 0);
 signal NumC_int     : STD_LOGIC_VECTOR (3 downto 0);
 signal NumD_int     : STD_LOGIC_VECTOR (3 downto 0);
 signal NumU_int     : STD_LOGIC_VECTOR (3 downto 0);
-
+signal Sel_int      : STD_LOGIC_VECTOR (1 downto 0);
+signal tiempo_int   : STD_LOGIC_VECTOR (3 downto 0);
+signal ClkRefresh_int : STD_LOGIC;
 begin
 
---U1 : SelAnodo
---	port map (
---		Sel   => Sel_int,
---		Anodo => Disp
---	);
---
---U2 : DecBCD7Seg
---	port map (
---		BCD => Tiempo_int,
---		Seg => Seg
---	);
+U1 : SelAnodo
+	port map (
+		Sel   => Sel_int,
+		Anodo => Disp
+	);
+
+U2 : DecBCD7Seg
+	port map (
+		BCD => Tiempo_int,
+		Seg => Seg
+	);
 
 U3 : Clk1MHz
 	port map (
@@ -152,7 +148,6 @@ U7 : Contador
 		numD     => NumD_int,
 		numU     => NumU_int
 	);
-	
 	
 
 end Behavioral;
