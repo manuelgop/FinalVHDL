@@ -32,9 +32,9 @@ architecture Behavioral of SenalIn is
 
 begin
 
---process()
---if(clk_)
---end process;
+process()
+if(clk_)
+end process;
 
 end Behavioral;
 
