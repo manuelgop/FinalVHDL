@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: Top.prj
 
@@ -105,16 +105,28 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\SistemasDigitalesAvanzados\Ultrasonic\SelAnodo.vhd" into library work
+Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\SenalOut.vhd" into library work
+Parsing entity <SenalOut>.
+Parsing architecture <Behavioral> of entity <senalout>.
+Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\SenalIn.vhd" into library work
+Parsing entity <SenalIn>.
+Parsing architecture <Behavioral> of entity <senalin>.
+Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\SelAnodo.vhd" into library work
 Parsing entity <SelAnodo>.
 Parsing architecture <Behavioral> of entity <selanodo>.
-Parsing VHDL file "C:\SistemasDigitalesAvanzados\Ultrasonic\RefreshDisplay.vhd" into library work
+Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\RefreshDisplay.vhd" into library work
 Parsing entity <RefreshDisplay>.
 Parsing architecture <Behavioral> of entity <refreshdisplay>.
-Parsing VHDL file "C:\SistemasDigitalesAvanzados\Ultrasonic\DecBCD7Seg.vhd" into library work
+Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\DecBCD7Seg.vhd" into library work
 Parsing entity <DecBCD7Seg>.
 Parsing architecture <Behavioral> of entity <decbcd7seg>.
-Parsing VHDL file "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" into library work
+Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\Contador.vhd" into library work
+Parsing entity <Contador>.
+Parsing architecture <Behavioral> of entity <contador>.
+Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\Clk1MHz.vhd" into library work
+Parsing entity <Clk1MHz>.
+Parsing architecture <Behavioral> of entity <clk1mhz>.
+Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" into library work
 Parsing entity <Top>.
 Parsing architecture <Behavioral> of entity <top>.
 
@@ -127,29 +139,37 @@ Elaborating entity <Top> (architecture <Behavioral>) from library <work>.
 Elaborating entity <SelAnodo> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <DecBCD7Seg> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:89 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 47: <clk1mhz> remains a black-box since it has no binding entity.
+
+Elaborating entity <Clk1MHz> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <RefreshDisplay> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:89 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 71: <senalin> remains a black-box since it has no binding entity.
-WARNING:HDLCompiler:89 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 63: <senalout> remains a black-box since it has no binding entity.
-WARNING:HDLCompiler:89 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 79: <contador> remains a black-box since it has no binding entity.
-WARNING:HDLCompiler:634 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 93: Net <Rst> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 98: Net <Sel_int[1]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" Line 99: Net <tiempo_int[3]> does not have a driver.
-WARNING:Xst:2972 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" line 122. All outputs of instance <U4> of block <RefreshDisplay> are unconnected in block <Top>. Underlying logic will be removed.
+
+Elaborating entity <SenalIn> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <SenalOut> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Contador> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:634 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" Line 93: Net <Rst> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" Line 98: Net <Sel_int[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" Line 99: Net <tiempo_int[3]> does not have a driver.
+WARNING:Xst:2972 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" line 115. All outputs of instance <U3> of block <Clk1MHz> are unconnected in block <Top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" line 122. All outputs of instance <U4> of block <RefreshDisplay> are unconnected in block <Top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" line 129. All outputs of instance <U5> of block <SenalIn> are unconnected in block <Top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" line 135. All outputs of instance <U6> of block <SenalOut> are unconnected in block <Top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" line 142. All outputs of instance <U7> of block <Contador> are unconnected in block <Top>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <Top>.
-    Related source file is "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd".
+    Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd".
 WARNING:Xst:647 - Input <Input> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" line 122: Output port <ClkOut> of the instance <U4> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" line 142: Output port <numM> of the instance <U7> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" line 142: Output port <numC> of the instance <U7> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" line 142: Output port <numD> of the instance <U7> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\SistemasDigitalesAvanzados\Ultrasonic\Top.vhd" line 142: Output port <numU> of the instance <U7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" line 122: Output port <ClkOut> of the instance <U4> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" line 142: Output port <numM> of the instance <U7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" line 142: Output port <numC> of the instance <U7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" line 142: Output port <numD> of the instance <U7> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.vhd" line 142: Output port <numU> of the instance <U7> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <Sel_int> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <tiempo_int> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <Rst> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -158,13 +178,13 @@ WARNING:Xst:653 - Signal <Rst> is used but never assigned. This sourceless signa
 Unit <Top> synthesized.
 
 Synthesizing Unit <SelAnodo>.
-    Related source file is "C:\SistemasDigitalesAvanzados\Ultrasonic\SelAnodo.vhd".
+    Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\SelAnodo.vhd".
     Summary:
 	no macro.
 Unit <SelAnodo> synthesized.
 
 Synthesizing Unit <DecBCD7Seg>.
-    Related source file is "C:\SistemasDigitalesAvanzados\Ultrasonic\DecBCD7Seg.vhd".
+    Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\DecBCD7Seg.vhd".
     Summary:
 	no macro.
 Unit <DecBCD7Seg> synthesized.
@@ -226,14 +246,8 @@ Primitive and Black Box Usage:
 # BELS                             : 2
 #      GND                         : 1
 #      VCC                         : 1
-# IO Buffers                       : 13
-#      IBUF                        : 1
+# IO Buffers                       : 12
 #      OBUF                        : 12
-# Others                           : 4
-#      Clk1MHz                     : 1
-#      Contador                    : 1
-#      SenalIn                     : 1
-#      SenalOut                    : 1
 
 Device utilization summary:
 ---------------------------
@@ -252,7 +266,7 @@ Slice Logic Distribution:
 
 IO Utilization: 
  Number of IOs:                          15
- Number of bonded IOBs:                  13  out of    232     5%  
+ Number of bonded IOBs:                  12  out of    232     5%  
 
 Specific Feature Utilization:
 
@@ -287,29 +301,11 @@ Speed Grade: -3
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 1.222ns
+   Maximum combinational path delay: No path found
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 6 / 6
--------------------------------------------------------------------------
-Delay:               1.222ns (Levels of Logic = 1)
-  Source:            Clk100MHz (PAD)
-  Destination:       U3:Clk (PAD)
-
-  Data Path: Clk100MHz to U3:Clk
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             0   1.222   0.000  Clk100MHz_IBUF (Clk100MHz_IBUF)
-    Clk1MHz:Clk                0.000          U3
-    ----------------------------------------
-    Total                      1.222ns (1.222ns logic, 0.000ns route)
-                                       (100.0% logic, 0.0% route)
 
 =========================================================================
 
@@ -319,12 +315,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.23 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.47 secs
  
 --> 
 
-Total memory usage is 257664 kilobytes
+Total memory usage is 258624 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   12 (   0 filtered)

@@ -1,22 +1,4 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    11:27:52 10/06/2010 
--- Design Name: 
--- Module Name:    Clk1MHz - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -32,7 +14,7 @@ end Clk1MHz;
 architecture Behavioral of Clk1MHz is
   --Declaraciones de constantes
   constant Fosc    : integer := 100000000;   --Frecuencia del oscilador de tabletas NEXYS 3
-  constant Fdiv    : integer := 1;           --Frecuencia deseada del divisor
+  constant Fdiv    : integer := 1000000;     --Frecuencia deseada del divisor
   constant CtaMax  : integer := Fosc / Fdiv; --Cuenta maxima a la que hay que llegar
   --Declaracion de signals
   signal Cont      : integer range 0 to CtaMax;

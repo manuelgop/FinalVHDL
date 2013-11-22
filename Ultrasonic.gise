@@ -67,16 +67,21 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1384993879" xil_pn:in_ck="-6151641902539742347" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-1484822076542432612" xil_pn:start_ts="1384993870">
+    <transform xil_pn:end_ts="1385143659" xil_pn:in_ck="5390894466077233441" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-1484822076542432612" xil_pn:start_ts="1385143650">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="Top.lso"/>
+      <outfile xil_pn:name="Top.ngc"/>
+      <outfile xil_pn:name="Top.ngr"/>
+      <outfile xil_pn:name="Top.prj"/>
+      <outfile xil_pn:name="Top.stx"/>
+      <outfile xil_pn:name="Top.syr"/>
+      <outfile xil_pn:name="Top.xst"/>
+      <outfile xil_pn:name="Top_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
     </transform>
   </transforms>
 
