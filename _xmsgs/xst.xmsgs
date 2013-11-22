@@ -30,5 +30,8 @@ It will be removed from the design.
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">U3/ClkOut</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Top</arg>&gt;.
 </msg>
 
+<msg type="warning" file="Xst" num="2036" delta="new" >Inserting OBUF on port &lt;<arg fmt="%s" index="1">Input</arg>&gt; driven by black box &lt;<arg fmt="%s" index="2">SenalIn</arg>&gt;. Possible simulation mismatch.
+</msg>
+
 </messages>
 

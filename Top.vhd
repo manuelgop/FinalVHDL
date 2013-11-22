@@ -72,6 +72,7 @@ component SenalOut
 component SenalIn
 	port (
 		Enable : in  STD_LOGIC;
+		Clk      : in STD_LOGIC;
 		inSignal : out STD_LOGIC
 	);
 	end component;
@@ -145,6 +146,7 @@ U4 : RefreshDisplay
 U5 : SenalIn
 	port map (
 		Enable   => Output,
+		Clk      => Clk100Mhz,
 		inSignal => Input
 	);
 

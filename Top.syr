@@ -206,12 +206,6 @@ Synthesizing Unit <RefreshDisplay>.
 	inferred   1 Multiplexer(s).
 Unit <RefreshDisplay> synthesized.
 
-Synthesizing Unit <SenalIn>.
-    Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\SenalIn.vhd".
-    Summary:
-	no macro.
-Unit <SenalIn> synthesized.
-
 Synthesizing Unit <SenalOut>.
     Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\SenalOut.vhd".
 WARNING:Xst:647 - Input <Delay> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -339,6 +333,7 @@ WARNING:Xst:2677 - Node <U3/ClkOut> of sequential type is unconnected in block <
 Optimizing unit <Top> ...
 
 Mapping all equations...
+WARNING:Xst:2036 - Inserting OBUF on port <Input> driven by black box <SenalIn>. Possible simulation mismatch.
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 0.
 
@@ -385,10 +380,12 @@ Primitive and Black Box Usage:
 #      FDC                         : 17
 #      FDCE                        : 2
 # Clock Buffers                    : 1
-#      BUFGP                       : 1
-# IO Buffers                       : 15
-#      IBUF                        : 1
+#      BUFG                        : 1
+# IO Buffers                       : 16
+#      IBUF                        : 2
 #      OBUF                        : 14
+# Others                           : 1
+#      SenalIn                     : 1
 
 Device utilization summary:
 ---------------------------
@@ -436,7 +433,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-Clk100MHz                          | BUFGP                  | 19    |
+Clk100MHz                          | IBUF+BUFG              | 19    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -450,7 +447,7 @@ Speed Grade: -3
    Minimum period: 3.853ns (Maximum Frequency: 259.545MHz)
    Minimum input arrival time before clock: 2.723ns
    Maximum output required time after clock: 4.649ns
-   Maximum combinational path delay: No path found
+   Maximum combinational path delay: 3.150ns
 
 Timing Details:
 ---------------
@@ -520,6 +517,24 @@ Offset:              4.649ns (Levels of Logic = 2)
                                        (69.3% logic, 30.7% route)
 
 =========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               3.150ns (Levels of Logic = 1)
+  Source:            U5:inSignal (PAD)
+  Destination:       Input (PAD)
+
+  Data Path: U5:inSignal to Input
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    SenalIn:inSignal       1   0.000   0.579  U5 (Input_OBUF)
+     OBUF:I->O                 2.571          Input_OBUF (Input)
+    ----------------------------------------
+    Total                      3.150ns (2.571ns logic, 0.579ns route)
+                                       (81.6% logic, 18.4% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
@@ -536,13 +551,13 @@ Clk100MHz      |    3.853|         |         |         |
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.13 secs
+Total CPU time to Xst completion: 6.19 secs
  
 --> 
 
-Total memory usage is 258624 kilobytes
+Total memory usage is 258880 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    6 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

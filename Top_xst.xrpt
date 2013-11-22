@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Fri Nov 22 13:18:31 2013">
+  <application stringID="Xst" timeStamp="Fri Nov 22 13:28:33 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -158,12 +158,13 @@
           <item dataType="int" stringID="XST_FDCE" value="2"/>
         </item>
         <item dataType="int" stringID="XST_CLOCK_BUFFERS" value="1">
-          <item dataType="int" stringID="XST_BUFGP" value="1"/>
+          <item dataType="int" label="-bufg" stringID="XST_BUFG" value="1"/>
         </item>
-        <item dataType="int" stringID="XST_IO_BUFFERS" value="15">
-          <item dataType="int" stringID="XST_IBUF" value="1"/>
+        <item dataType="int" stringID="XST_IO_BUFFERS" value="16">
+          <item dataType="int" stringID="XST_IBUF" value="2"/>
           <item dataType="int" stringID="XST_OBUF" value="14"/>
         </item>
+        <item dataType="int" stringID="XST_OTHERS" value="1"></item>
       </section>
     </section>
     <section stringID="XST_DEVICE_UTILIZATION_SUMMARY">
@@ -185,7 +186,7 @@
     </section>
     <section stringID="XST_ERRORS_STATISTICS">
       <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_ERRORS" value="0"/>
-      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="6"/>
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="7"/>
       <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_INFOS" value="2"/>
     </section>
   </application>

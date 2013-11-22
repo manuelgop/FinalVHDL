@@ -24,13 +24,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity SenalIn is
 	port (Enable : in  STD_LOGIC;
+			Clk    : in  STD_LOGIC;
 			inSignal : out STD_LOGIC);
 end SenalIn;
 
 architecture Behavioral of SenalIn is
 
 begin
-inSignal <= Enable; -- Borrar
+
+--process()
+--if(clk_)
+--end process;
 
 end Behavioral;
 
