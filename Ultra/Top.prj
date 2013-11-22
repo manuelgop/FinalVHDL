@@ -1,0 +1,4 @@
+vhdl work "StateMachine.vhd"
+vhdl work "ContDist.vhd"
+vhdl work "Clk1MHz.vhd"
+vhdl work "Ultra.vhd"
