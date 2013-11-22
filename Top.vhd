@@ -21,8 +21,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity Top is
-    Port ( Input     : in   STD_LOGIC;
-           Output    : out  STD_LOGIC;
+    Port ( Input     : inout   STD_LOGIC;
+           Output    : inout   STD_LOGIC;
+			  Rst       : in   STD_LOGIC;
 			  Seg       : out  STD_LOGIC_VECTOR (7 downto 0);
 			  Disp      : out  STD_LOGIC_VECTOR (3 downto 0);
 			  Clk100MHz : in   STD_LOGIC);
@@ -56,7 +57,7 @@ component RefreshDisplay
 	port (
 		Rst    : in  STD_LOGIC;
 		Clk    : in  STD_LOGIC;
-		ClkOut : out STD_LOGIC
+		ClkOut : out STD_LOGIC 
 	);
 	end component;
 
@@ -87,16 +88,31 @@ component Contador
 	);
 	end component;	
 	
-signal Clk_1MHz_int : STD_LOGIC;
-signal Output_int   : STD_LOGIC;
-signal Input_int    : STD_LOGIC;
-signal Rst          : STD_LOGIC;
-signal NumM_int     : STD_LOGIC_VECTOR (3 downto 0);
-signal NumC_int     : STD_LOGIC_VECTOR (3 downto 0);
-signal NumD_int     : STD_LOGIC_VECTOR (3 downto 0);
-signal NumU_int     : STD_LOGIC_VECTOR (3 downto 0);
-signal Sel_int      : STD_LOGIC_VECTOR (1 downto 0);
-signal tiempo_int   : STD_LOGIC_VECTOR (3 downto 0);
+component Cont0a3
+	port (
+		Clk      : in STD_LOGIC;
+		Enable   : in STD_LOGIC;
+		Rst      : in STD_LOGIC;
+		Cuenta   : out STD_LOGIC_VECTOR (1 downto 0)
+	);
+end component;	
+
+component Mux4to1
+	port( numM    : in  STD_LOGIC_VECTOR (3 downto 0);
+			numC    : in  STD_LOGIC_VECTOR (3 downto 0);
+			numD    : in  STD_LOGIC_VECTOR (3 downto 0);
+			numU    : in  STD_LOGIC_VECTOR (3 downto 0);
+			Sel	  : in  STD_LOGIC_VECTOR (1 downto 0);
+			Dist    : out STD_LOGIC_VECTOR (3 downto 0));
+end component;	
+	
+signal Clk_int        : STD_LOGIC;
+signal NumM_int       : STD_LOGIC_VECTOR (3 downto 0);
+signal NumC_int       : STD_LOGIC_VECTOR (3 downto 0);
+signal NumD_int       : STD_LOGIC_VECTOR (3 downto 0);
+signal NumU_int       : STD_LOGIC_VECTOR (3 downto 0);
+signal Sel_int        : STD_LOGIC_VECTOR (1 downto 0);
+signal Dist_int       : STD_LOGIC_VECTOR (3 downto 0);
 signal ClkRefresh_int : STD_LOGIC;
 begin
 
@@ -108,7 +124,7 @@ U1 : SelAnodo
 
 U2 : DecBCD7Seg
 	port map (
-		BCD => Tiempo_int,
+		BCD => Dist_int,
 		Seg => Seg
 	);
 
@@ -116,9 +132,9 @@ U3 : Clk1MHz
 	port map (
 		Rst    => Rst,
 		Clk    => Clk100MHz,
-		ClkOut => Clk_1MHz_int
+		ClkOut => Clk_int
 	);
-	
+	 
 U4 : RefreshDisplay
 	port map (
 		Rst    => Rst,
@@ -128,27 +144,43 @@ U4 : RefreshDisplay
 	
 U5 : SenalIn
 	port map (
-		Enable   => Output_int,
-		inSignal => Input_int
+		Enable   => Output,
+		inSignal => Input
 	);
 
 U6 : SenalOut
 	port map (
-		Delay     => Input_int,
-		Clk       => Clk_1MHz_int,
-		outSignal => Output_int
+		Delay     => Input,
+		Clk       => Clk_int,
+		outSignal => Output
 	);
 
 U7 : Contador
 	port map (
-		Clk      => Clk_1MHz_int,
-		Enable   => Input_int,
+		Clk      => Clk_int,
+		Enable   => Input,
 		numM     => NumM_int,
 		numC     => NumC_int,
 		numD     => NumD_int,
 		numU     => NumU_int
 	);
 	
+	
+U8 : Cont0a3
+	port map (
+		Clk     => Clk100Mhz,
+		Enable  => ClkRefresh_int,
+		Rst     => Rst,
+		Cuenta  => Sel_int(1 downto 0)
+	);
 
+U9: Mux4to1
+	port map ( numM   => numM_int (3 downto 0),
+				  numC   => numC_int (3 downto 0),
+				  numD   => numD_int (3 downto 0), 
+				  numU   => numU_int (3 downto 0),
+				  Sel    => Sel_int,
+				  Dist   => Dist_int);	
+					  
 end Behavioral;
 
