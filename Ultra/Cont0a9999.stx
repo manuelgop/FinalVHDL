@@ -1,0 +1,63 @@
+Release 14.6 - xst P.68d (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Projects_SistDigAv/Ultra/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to C:/Projects_SistDigAv/Ultra/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: Cont0a9999.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" into library work
+Parsing entity <Cont0a9999>.
+Parsing architecture <Behavioral> of entity <cont0a9999>.
+ERROR:HDLCompiler:1731 - "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" Line 61: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
+ERROR:HDLCompiler:1731 - "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" Line 76: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
+ERROR:HDLCompiler:1731 - "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" Line 91: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
+ERROR:HDLCompiler:806 - "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" Line 98: Syntax error near "process".
+ERROR:HDLCompiler:806 - "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" Line 99: Syntax error near "begin".
+ERROR:HDLCompiler:1731 - "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" Line 106: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
+ERROR:HDLCompiler:806 - "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" Line 113: Syntax error near "<=".
+ERROR:HDLCompiler:1728 - "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" Line 113: Type error near countuni ; current type std_logic_vector; expected type  void
+ERROR:HDLCompiler:806 - "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" Line 120: Syntax error near "Behavioral".
+ERROR:HDLCompiler:841 - "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" Line 120: Expecting type  void for <behavioral>.
+VHDL file C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd ignored due to errors
+--> 
+
+Total memory usage is 161932 kilobytes
+
+Number of errors   :   10 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
