@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.ncd
+OUTFILE=C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=C:\Users\Andres\Documents\GitHub\FinalVHDL
+LICENSE=WebPack
+USER_INFO=210725930_0_0_061

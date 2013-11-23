@@ -47,7 +47,7 @@ component DecBCD7Seg
 	
 component Clk1MHz
 	port (
-		Rst    : in  STD_LOGIC;
+		Rst    : in  STD_LOGIC; 
 		Clk    : in  STD_LOGIC;
 		ClkOut : out STD_LOGIC
 	);
@@ -60,23 +60,6 @@ component RefreshDisplay
 		ClkOut : out STD_LOGIC 
 	);
 	end component;
-
-component SenalOut
-	port (
-		Delay     : in  STD_LOGIC;
-		Clk       : in  STD_LOGIC;
-		outSignal : out STD_LOGIC
-	);
-	end component;
-
-component SenalIn
-	port (
-		Enable : in  STD_LOGIC;
-		Clk      : in STD_LOGIC;
-		inSignal : out STD_LOGIC
-	);
-	end component;
-	
 	
 component Contador
 	port (
@@ -88,6 +71,26 @@ component Contador
 		numU     : out STD_LOGIC_VECTOR (3 downto 0)
 	);
 	end component;	
+	
+component ContDist
+	port(	
+		EnableIn  : in  STD_LOGIC;
+		EnableClk : in  STD_LOGIC;
+		Rst       : in  STD_LOGIC;
+		Clk       : in  STD_LOGIC;
+		Cuenta	 : out STD_LOGIC_VECTOR (14 downto 0)
+	);
+	end component;
+	
+component StateMachine
+	port( 
+		Rst       : in  STD_LOGIC;
+		EnableClk : in  STD_LOGIC;
+		Clk       : in  STD_LOGIC;
+		cdist     : in  STD_LOGIC_VECTOR (14 downto 0);
+		outsig    : out STD_LOGIC
+	);
+	end component;
 	
 component Cont0a3
 	port (
@@ -107,14 +110,12 @@ component Mux4to1
 			Dist    : out STD_LOGIC_VECTOR (3 downto 0));
 end component;	
 	
-signal Clk_int        : STD_LOGIC;
-signal NumM_int       : STD_LOGIC_VECTOR (3 downto 0);
-signal NumC_int       : STD_LOGIC_VECTOR (3 downto 0);
-signal NumD_int       : STD_LOGIC_VECTOR (3 downto 0);
-signal NumU_int       : STD_LOGIC_VECTOR (3 downto 0);
+signal Clk1Mhz_int        : STD_LOGIC;
 signal Sel_int        : STD_LOGIC_VECTOR (1 downto 0);
 signal Dist_int       : STD_LOGIC_VECTOR (3 downto 0);
 signal ClkRefresh_int : STD_LOGIC;
+signal c_dist      : STD_LOGIC_VECTOR (14 downto 0);
+signal c_dist_t : STD_LOGIC_VECTOR (3 downto 0);
 begin
 
 U1 : SelAnodo
@@ -133,7 +134,7 @@ U3 : Clk1MHz
 	port map (
 		Rst    => Rst,
 		Clk    => Clk100MHz,
-		ClkOut => Clk_int
+		ClkOut => Clk1Mhz_int
 	);
 	 
 U4 : RefreshDisplay
@@ -143,30 +144,23 @@ U4 : RefreshDisplay
 		ClkOut => ClkRefresh_int
 	);
 	
-U5 : SenalIn
-	port map (
-		Enable   => Output,
-		Clk      => Clk100Mhz,
-		inSignal => Input
-	);
-
-U6 : SenalOut
-	port map (
-		Delay     => Input,
-		Clk       => Clk_int,
-		outSignal => Output
-	);
-
-U7 : Contador
-	port map (
-		Clk      => Clk_int,
-		Enable   => Input,
-		numM     => NumM_int,
-		numC     => NumC_int,
-		numD     => NumD_int,
-		numU     => NumU_int
+U5 : ContDist
+	port map (	
+		EnableIn  => Input,
+		EnableClk => Clk1Mhz_int,
+		Rst       => Rst,
+		Clk       => Clk100Mhz,
+		Cuenta	 => c_dist
 	);
 	
+U6 : StateMachine
+	port map ( 
+		Rst       => Rst,
+		EnableClk => Clk1Mhz_int,
+		Clk       => Clk100Mhz,
+		cdist     => c_dist,
+		outsig    => output
+	);
 	
 U8 : Cont0a3
 	port map (
@@ -176,11 +170,13 @@ U8 : Cont0a3
 		Cuenta  => Sel_int(1 downto 0)
 	);
 
+c_dist_t <= '0' & c_dist (14 downto 12);
+
 U9: Mux4to1
-	port map ( numM   => numM_int (3 downto 0),
-				  numC   => numC_int (3 downto 0),
-				  numD   => numD_int (3 downto 0), 
-				  numU   => numU_int (3 downto 0),
+	port map ( numM   => c_dist_t,
+				  numC   => c_dist (11 downto 8),
+				  numD   => c_dist (7 downto 4), 
+				  numU   => c_dist (3 downto 0),
 				  Sel    => Sel_int,
 				  Dist   => Dist_int);	
 					  

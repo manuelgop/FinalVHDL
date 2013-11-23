@@ -105,12 +105,9 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\SenalOut.vhd" into library work
-Parsing entity <SenalOut>.
-Parsing architecture <Behavioral> of entity <senalout>.
-Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\SenalIn.vhd" into library work
-Parsing entity <SenalIn>.
-Parsing architecture <Behavioral> of entity <senalin>.
+Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\StateMachine.vhd" into library work
+Parsing entity <StateMachine>.
+Parsing architecture <Behavioral> of entity <statemachine>.
 Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\SelAnodo.vhd" into library work
 Parsing entity <SelAnodo>.
 Parsing architecture <Behavioral> of entity <selanodo>.
@@ -123,9 +120,9 @@ Parsing architecture <Behavioral> of entity <mux4to1>.
 Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\DecBCD7Seg.vhd" into library work
 Parsing entity <DecBCD7Seg>.
 Parsing architecture <Behavioral> of entity <decbcd7seg>.
-Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\Contador.vhd" into library work
-Parsing entity <Contador>.
-Parsing architecture <Behavioral> of entity <contador>.
+Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\ContDist.vhd" into library work
+Parsing entity <ContDist>.
+Parsing architecture <Behavioral> of entity <contdist>.
 Parsing VHDL file "C:\Users\Andres\Documents\GitHub\FinalVHDL\Cont0a3.vhd" into library work
 Parsing entity <Cont0a3>.
 Parsing architecture <Behavioral> of entity <cont0a3>.
@@ -150,11 +147,10 @@ Elaborating entity <Clk1MHz> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <RefreshDisplay> (architecture <Behavioral>) from library <work>.
 
-Elaborating entity <SenalIn> (architecture <Behavioral>) from library <work>.
+Elaborating entity <ContDist> (architecture <Behavioral>) from library <work>.
 
-Elaborating entity <SenalOut> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <Contador> (architecture <Behavioral>) from library <work>.
+Elaborating entity <StateMachine> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\Andres\Documents\GitHub\FinalVHDL\StateMachine.vhd" Line 81. Case statement is complete. others clause is never selected
 
 Elaborating entity <Cont0a3> (architecture <Behavioral>) from library <work>.
 
@@ -186,9 +182,9 @@ Unit <DecBCD7Seg> synthesized.
 
 Synthesizing Unit <Clk1MHz>.
     Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\Clk1MHz.vhd".
-    Found 7-bit register for signal <Cont>.
+    Found 7-bit register for signal <Count>.
     Found 1-bit register for signal <ClkOut>.
-    Found 7-bit adder for signal <Cont[6]_GND_8_o_add_1_OUT> created at line 32.
+    Found 7-bit adder for signal <Count[6]_GND_9_o_add_1_OUT> created at line 33.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   8 D-type flip-flop(s).
@@ -199,28 +195,49 @@ Synthesizing Unit <RefreshDisplay>.
     Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\RefreshDisplay.vhd".
     Found 1-bit register for signal <ClkOut>.
     Found 16-bit register for signal <FreqCounter>.
-    Found 16-bit adder for signal <FreqCounter[15]_GND_9_o_add_1_OUT> created at line 26.
+    Found 16-bit adder for signal <FreqCounter[15]_GND_10_o_add_1_OUT> created at line 26.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  17 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 Unit <RefreshDisplay> synthesized.
 
-Synthesizing Unit <SenalOut>.
-    Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\SenalOut.vhd".
-WARNING:Xst:647 - Input <Delay> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Synthesizing Unit <ContDist>.
+    Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\ContDist.vhd".
+    Found 15-bit register for signal <Count>.
+    Found 15-bit adder for signal <Count[14]_GND_11_o_add_0_OUT> created at line 26.
     Summary:
-	no macro.
-Unit <SenalOut> synthesized.
+	inferred   1 Adder/Subtractor(s).
+	inferred  15 D-type flip-flop(s).
+Unit <ContDist> synthesized.
 
-Synthesizing Unit <Contador>.
-    Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\Contador.vhd".
-WARNING:Xst:647 - Input <Clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Enable> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Synthesizing Unit <StateMachine>.
+    Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\StateMachine.vhd".
+    Found 15-bit register for signal <count>.
+    Found 2-bit register for signal <pres_state>.
+    Found finite state machine <FSM_0> for signal <pres_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | Clk (rising_edge)                              |
+    | Reset              | Rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | st0                                            |
+    | Power Up State     | st0                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 15-bit adder for signal <count[14]_GND_12_o_add_0_OUT> created at line 40.
+    Found 15-bit comparator equal for signal <period[14]_count[14]_equal_2_o> created at line 41
     Summary:
-	no macro.
-Unit <Contador> synthesized.
+	inferred   1 Adder/Subtractor(s).
+	inferred  15 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <StateMachine> synthesized.
 
 Synthesizing Unit <Cont0a3>.
     Related source file is "C:\Users\Andres\Documents\GitHub\FinalVHDL\Cont0a3.vhd".
@@ -246,20 +263,26 @@ Macro Statistics
 # RAMs                                                 : 2
  16x8-bit single-port Read Only RAM                    : 1
  4x4-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 3
+# Adders/Subtractors                                   : 5
+ 15-bit adder                                          : 2
  16-bit adder                                          : 1
  2-bit adder                                           : 1
  7-bit adder                                           : 1
-# Registers                                            : 5
+# Registers                                            : 7
  1-bit register                                        : 2
+ 15-bit register                                       : 2
  16-bit register                                       : 1
  2-bit register                                        : 1
  7-bit register                                        : 1
-# Multiplexers                                         : 4
+# Comparators                                          : 1
+ 15-bit comparator equal                               : 1
+# Multiplexers                                         : 5
+ 15-bit 2-to-1 multiplexer                             : 1
  16-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 1
  4-bit 4-to-1 multiplexer                              : 1
  7-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
 
 =========================================================================
 
@@ -267,12 +290,14 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1290 - Hierarchical block <U3> is unconnected in block <Top>.
-   It will be removed from the design.
 
 Synthesizing (advanced) Unit <Clk1MHz>.
-The following registers are absorbed into counter <Cont>: 1 register on signal <Cont>.
+The following registers are absorbed into counter <Count>: 1 register on signal <Count>.
 Unit <Clk1MHz> synthesized (advanced).
+
+Synthesizing (advanced) Unit <ContDist>.
+The following registers are absorbed into counter <Count>: 1 register on signal <Count>.
+Unit <ContDist> synthesized (advanced).
 
 Synthesizing (advanced) Unit <DecBCD7Seg>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_Seg> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -306,6 +331,10 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_Anodo> will be implemented on LUTs e
     -----------------------------------------------------------------------
 Unit <SelAnodo> synthesized (advanced).
 
+Synthesizing (advanced) Unit <StateMachine>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <StateMachine> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
@@ -315,27 +344,41 @@ Macro Statistics
  4x4-bit single-port distributed Read Only RAM         : 1
 # Adders/Subtractors                                   : 1
  2-bit adder                                           : 1
-# Counters                                             : 2
+# Counters                                             : 4
+ 15-bit up counter                                     : 2
  16-bit up counter                                     : 1
  7-bit up counter                                      : 1
 # Registers                                            : 4
  Flip-Flops                                            : 4
+# Comparators                                          : 1
+ 15-bit comparator equal                               : 1
 # Multiplexers                                         : 1
  4-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <U3/ClkOut> of sequential type is unconnected in block <Top>.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <U6/FSM_0> on signal <pres_state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ st0   | 00
+ st1   | 01
+ st2   | 10
+ st3   | 11
+-------------------
 
 Optimizing unit <Top> ...
 
+Optimizing unit <StateMachine> ...
+
 Mapping all equations...
-WARNING:Xst:2036 - Inserting OBUF on port <Input> driven by black box <SenalIn>. Possible simulation mismatch.
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -343,8 +386,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 19
- Flip-Flops                                            : 19
+# Registers                                            : 59
+ Flip-Flops                                            : 59
 
 =========================================================================
 
@@ -367,25 +410,27 @@ Top Level Output File Name         : Top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 74
+# BELS                             : 215
 #      GND                         : 1
-#      INV                         : 2
-#      LUT1                        : 15
-#      LUT2                        : 21
-#      LUT6                        : 3
-#      MUXCY                       : 15
+#      INV                         : 4
+#      LUT1                        : 29
+#      LUT2                        : 42
+#      LUT3                        : 12
+#      LUT4                        : 14
+#      LUT5                        : 3
+#      LUT6                        : 14
+#      MUXCY                       : 49
 #      VCC                         : 1
-#      XORCY                       : 16
-# FlipFlops/Latches                : 19
-#      FDC                         : 17
-#      FDCE                        : 2
+#      XORCY                       : 46
+# FlipFlops/Latches                : 59
+#      FDC                         : 26
+#      FDCE                        : 32
+#      FDE                         : 1
 # Clock Buffers                    : 1
-#      BUFG                        : 1
-# IO Buffers                       : 16
+#      BUFGP                       : 1
+# IO Buffers                       : 15
 #      IBUF                        : 2
-#      OBUF                        : 14
-# Others                           : 1
-#      SenalIn                     : 1
+#      OBUF                        : 13
 
 Device utilization summary:
 ---------------------------
@@ -394,16 +439,16 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              19  out of  18224     0%  
- Number of Slice LUTs:                   41  out of   9112     0%  
-    Number used as Logic:                41  out of   9112     0%  
+ Number of Slice Registers:              59  out of  18224     0%  
+ Number of Slice LUTs:                  118  out of   9112     1%  
+    Number used as Logic:               118  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     41
-   Number with an unused Flip Flop:      22  out of     41    53%  
-   Number with an unused LUT:             0  out of     41     0%  
-   Number of fully used LUT-FF pairs:    19  out of     41    46%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:    118
+   Number with an unused Flip Flop:      59  out of    118    50%  
+   Number with an unused LUT:             0  out of    118     0%  
+   Number of fully used LUT-FF pairs:    59  out of    118    50%  
+   Number of unique control sets:         5
 
 IO Utilization: 
  Number of IOs:                          16
@@ -433,7 +478,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-Clk100MHz                          | IBUF+BUFG              | 19    |
+Clk100MHz                          | BUFGP                  | 59    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -444,10 +489,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.853ns (Maximum Frequency: 259.545MHz)
-   Minimum input arrival time before clock: 2.723ns
-   Maximum output required time after clock: 4.649ns
-   Maximum combinational path delay: 3.150ns
+   Minimum period: 4.904ns (Maximum Frequency: 203.907MHz)
+   Minimum input arrival time before clock: 3.935ns
+   Maximum output required time after clock: 6.244ns
+   Maximum combinational path delay: No path found
 
 Timing Details:
 ---------------
@@ -455,84 +500,88 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Clk100MHz'
-  Clock period: 3.853ns (frequency: 259.545MHz)
-  Total number of paths / destination ports: 413 / 21
+  Clock period: 4.904ns (frequency: 203.907MHz)
+  Total number of paths / destination ports: 8416 / 91
 -------------------------------------------------------------------------
-Delay:               3.853ns (Levels of Logic = 3)
-  Source:            U4/FreqCounter_11 (FF)
-  Destination:       U4/FreqCounter_0 (FF)
+Delay:               4.904ns (Levels of Logic = 23)
+  Source:            U6/pres_state_FSM_FFd1 (FF)
+  Destination:       U6/count_14 (FF)
   Source Clock:      Clk100MHz rising
   Destination Clock: Clk100MHz rising
 
-  Data Path: U4/FreqCounter_11 to U4/FreqCounter_0
+  Data Path: U6/pres_state_FSM_FFd1 to U6/count_14
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.447   0.981  U4/FreqCounter_11 (U4/FreqCounter_11)
-     LUT6:I0->O            1   0.203   0.684  U4/PWR_9_o_FreqCounter[15]_equal_1_o<15>4_SW0 (N6)
-     LUT6:I4->O           17   0.203   1.028  U4/PWR_9_o_FreqCounter[15]_equal_1_o<15>4 (U4/PWR_9_o_FreqCounter[15]_equal_1_o)
-     LUT2:I1->O            1   0.205   0.000  U4/Mcount_FreqCounter_eqn_01 (U4/Mcount_FreqCounter_eqn_0)
-     FDC:D                     0.102          U4/FreqCounter_0
+     FDC:C->Q             13   0.447   1.037  U6/pres_state_FSM_FFd1 (U6/pres_state_FSM_FFd1)
+     LUT3:I1->O            1   0.203   0.808  U6/period<13>1 (U6/period<2>)
+     LUT6:I3->O            1   0.205   0.000  U6/Mcompar_period[14]_count[14]_equal_2_o_lut<0> (U6/Mcompar_period[14]_count[14]_equal_2_o_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  U6/Mcompar_period[14]_count[14]_equal_2_o_cy<0> (U6/Mcompar_period[14]_count[14]_equal_2_o_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcompar_period[14]_count[14]_equal_2_o_cy<1> (U6/Mcompar_period[14]_count[14]_equal_2_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcompar_period[14]_count[14]_equal_2_o_cy<2> (U6/Mcompar_period[14]_count[14]_equal_2_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcompar_period[14]_count[14]_equal_2_o_cy<3> (U6/Mcompar_period[14]_count[14]_equal_2_o_cy<3>)
+     MUXCY:CI->O          18   0.019   1.050  U6/Mcompar_period[14]_count[14]_equal_2_o_cy<4> (U6/period[14]_count[14]_equal_2_o)
+     LUT2:I1->O            1   0.205   0.000  U6/Mcount_count_lut<0> (U6/Mcount_count_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  U6/Mcount_count_cy<0> (U6/Mcount_count_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<1> (U6/Mcount_count_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<2> (U6/Mcount_count_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<3> (U6/Mcount_count_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<4> (U6/Mcount_count_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<5> (U6/Mcount_count_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<6> (U6/Mcount_count_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<7> (U6/Mcount_count_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<8> (U6/Mcount_count_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<9> (U6/Mcount_count_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<10> (U6/Mcount_count_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<11> (U6/Mcount_count_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  U6/Mcount_count_cy<12> (U6/Mcount_count_cy<12>)
+     MUXCY:CI->O           0   0.019   0.000  U6/Mcount_count_cy<13> (U6/Mcount_count_cy<13>)
+     XORCY:CI->O           1   0.180   0.000  U6/Mcount_count_xor<14> (U6/Mcount_count14)
+     FDCE:D                    0.102          U6/count_14
     ----------------------------------------
-    Total                      3.853ns (1.160ns logic, 2.693ns route)
-                                       (30.1% logic, 69.9% route)
+    Total                      4.904ns (2.009ns logic, 2.895ns route)
+                                       (41.0% logic, 59.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk100MHz'
-  Total number of paths / destination ports: 19 / 19
+  Total number of paths / destination ports: 74 / 74
 -------------------------------------------------------------------------
-Offset:              2.723ns (Levels of Logic = 1)
+Offset:              3.935ns (Levels of Logic = 2)
   Source:            Rst (PAD)
-  Destination:       U4/ClkOut (FF)
+  Destination:       U3/ClkOut (FF)
   Destination Clock: Clk100MHz rising
 
-  Data Path: Rst to U4/ClkOut
+  Data Path: Rst to U3/ClkOut
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            19   1.222   1.071  Rst_IBUF (Rst_IBUF)
-     FDC:CLR                   0.430          U4/ClkOut
+     IBUF:I->O            59   1.222   1.606  Rst_IBUF (Rst_IBUF)
+     INV:I->O              1   0.206   0.579  U3/Rst_inv1_INV_0 (U3/Rst_inv)
+     FDE:CE                    0.322          U3/ClkOut
     ----------------------------------------
-    Total                      2.723ns (1.652ns logic, 1.071ns route)
-                                       (60.7% logic, 39.3% route)
+    Total                      3.935ns (1.750ns logic, 2.185ns route)
+                                       (44.5% logic, 55.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk100MHz'
-  Total number of paths / destination ports: 8 / 4
+  Total number of paths / destination ports: 171 / 12
 -------------------------------------------------------------------------
-Offset:              4.649ns (Levels of Logic = 2)
+Offset:              6.244ns (Levels of Logic = 3)
   Source:            U8/Cuenta_int_0 (FF)
-  Destination:       Disp<2> (PAD)
+  Destination:       Seg<6> (PAD)
   Source Clock:      Clk100MHz rising
 
-  Data Path: U8/Cuenta_int_0 to Disp<2>
+  Data Path: U8/Cuenta_int_0 to Seg<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             6   0.447   0.849  U8/Cuenta_int_0 (U8/Cuenta_int_0)
-     LUT2:I0->O            1   0.203   0.579  U1/Mram_Anodo12 (Disp_0_OBUF)
-     OBUF:I->O                 2.571          Disp_0_OBUF (Disp<0>)
+     FDCE:C->Q            10   0.447   1.221  U8/Cuenta_int_0 (U8/Cuenta_int_0)
+     LUT6:I0->O            7   0.203   1.021  U9/Mmux_Dist11 (Dist_int<0>)
+     LUT4:I0->O            1   0.203   0.579  U2/Mram_Seg21 (Seg_2_OBUF)
+     OBUF:I->O                 2.571          Seg_2_OBUF (Seg<2>)
     ----------------------------------------
-    Total                      4.649ns (3.221ns logic, 1.428ns route)
-                                       (69.3% logic, 30.7% route)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 2 / 2
--------------------------------------------------------------------------
-Delay:               3.150ns (Levels of Logic = 1)
-  Source:            U5:inSignal (PAD)
-  Destination:       Input (PAD)
-
-  Data Path: U5:inSignal to Input
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    SenalIn:inSignal       1   0.000   0.579  U5 (Input_OBUF)
-     OBUF:I->O                 2.571          Input_OBUF (Input)
-    ----------------------------------------
-    Total                      3.150ns (2.571ns logic, 0.579ns route)
-                                       (81.6% logic, 18.4% route)
+    Total                      6.244ns (3.424ns logic, 2.820ns route)
+                                       (54.8% logic, 45.2% route)
 
 =========================================================================
 
@@ -544,20 +593,20 @@ Clock to Setup on destination clock Clk100MHz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-Clk100MHz      |    3.853|         |         |         |
+Clk100MHz      |    4.904|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.19 secs
+Total CPU time to Xst completion: 6.58 secs
  
 --> 
 
-Total memory usage is 258880 kilobytes
+Total memory usage is 260224 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 
