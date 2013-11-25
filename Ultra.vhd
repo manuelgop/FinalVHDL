@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Top is
     Port ( Input     : in  STD_LOGIC;
-           Output    : out STD_LOGIC;
+           Output    : inout STD_LOGIC;
 			  Rst       : in  STD_LOGIC;
 			  Clk100MHz : in  STD_LOGIC;
 			  Disp      : out STD_LOGIC_VECTOR (3 downto 0);
@@ -35,16 +35,13 @@ component StateMachine
 	port( Rst       : in  STD_LOGIC;
 			EnableClk : in  STD_LOGIC;
 			Clk		 : in  STD_LOGIC;
-			cdist     : in  STD_LOGIC_VECTOR (14 downto 0);
 			outsig    : out STD_LOGIC);
 end component;
 
-component ContDist
-	port(	EnableIn  : in  STD_LOGIC;
-			EnableClk : in  STD_LOGIC;
-			Rst       : in  STD_LOGIC;
-			Clk       : in  STD_LOGIC;
-			Cuenta	 : out STD_LOGIC_VECTOR (14 downto 0));
+component Clk1Hz
+	port(	Rst    : in  STD_LOGIC;
+			Clk    : in  STD_LOGIC;
+			ClkOut : out STD_LOGIC);
 end component;
 
 component Clk1MHz
@@ -54,7 +51,8 @@ component Clk1MHz
 end component;
 
 component Cont0a9999
-	port(	Enable   : in  STD_LOGIC;
+	port(	SalSM    : in  STD_LOGIC;
+			Enable   : in  STD_LOGIC;
 			Rst      : in  STD_LOGIC;
 			Clk      : in  STD_LOGIC;
 			Millares : out STD_LOGIC_VECTOR(3 downto 0);
@@ -101,6 +99,19 @@ component ClkCmHz
 			ClkOut : out STD_LOGIC);
 end component;
 
+component FF
+	port( Enable : in  STD_LOGIC;
+			Clk	 : in  STD_LOGIC;
+			Min  	 : in  STD_LOGIC_VECTOR (3 downto 0);
+			Cin    : in  STD_LOGIC_VECTOR (3 downto 0);
+			Din    : in  STD_LOGIC_VECTOR (3 downto 0);
+			Uin    : in  STD_LOGIC_VECTOR (3 downto 0);
+			Mout   : out STD_LOGIC_VECTOR (3 downto 0);
+			Cout   : out STD_LOGIC_VECTOR (3 downto 0);
+			Dout   : out STD_LOGIC_VECTOR (3 downto 0);
+			Uout   : out STD_LOGIC_VECTOR (3 downto 0));
+end component;
+
 -- Embedded Signals
 signal c_dist         : STD_LOGIC_VECTOR (14 downto 0);
 signal Clk1MHz_int    : STD_LOGIC;
@@ -112,6 +123,11 @@ signal Sel_int        : STD_LOGIC_VECTOR (1 downto 0);
 signal Distancia_int  : STD_LOGIC_VECTOR (3 downto 0);
 signal ClkRefresh_int : STD_LOGIC;
 signal ClkCmHz_int	 : STD_LOGIC;
+signal perm_M         : STD_LOGIC_VECTOR (3 downto 0);
+signal perm_C         : STD_LOGIC_VECTOR (3 downto 0);
+signal perm_D         : STD_LOGIC_VECTOR (3 downto 0);
+signal perm_U         : STD_LOGIC_VECTOR (3 downto 0);
+signal Clk1Hz_int     : STD_LOGIC;
 
 begin
 
@@ -119,15 +135,12 @@ U1: StateMachine
 	port map ( 	Rst       => Rst,
 					EnableClk => Clk1MHz_int,
 					Clk       => Clk100MHz,
-					cdist     => c_dist,
 					outsig    => Output);	
 
-U2 : ContDist
-	port map (	EnableIn  => Input,
-					EnableClk => Clk1MHz_int,
-					Rst       => Rst,
-					Clk       => Clk100MHz,
-					Cuenta    => c_dist);
+U2 : Clk1Hz
+	port map (	Rst    => Rst,
+					Clk    => Clk100MHz,
+					ClkOut => Clk1Hz_int);
 					
 U3 : Clk1MHz
 	port map (	Rst    => Rst,
@@ -135,7 +148,8 @@ U3 : Clk1MHz
 					ClkOut => Clk1MHz_int);
 					
 U4	: Cont0a9999
-	port map (	Enable   => Input,
+	port map (	SalSM    => Output,
+					Enable   => Input,
 					Rst      => Rst,
 					Clk      => ClkCmHz_int,
 					Millares => BCD_M,
@@ -144,10 +158,10 @@ U4	: Cont0a9999
 					Unidades => BCD_U);
 
 U5 : Mux4to1					
-	port map (	Millares  => BCD_M,
-					Centenas  => BCD_C,
-					Decenas   => BCD_D,
-					Unidades  => BCD_U,
+	port map (	Millares  => perm_M,
+					Centenas  => perm_C,
+					Decenas   => perm_D,
+					Unidades  => perm_U,
 					Sel       => Sel_int,
 					Distancia => Distancia_int);
 					  
@@ -173,5 +187,17 @@ U10 : ClkCmHz
 	port map (	Rst    => Rst,
 					Clk    => Clk100MHz,
 					ClkOut => ClkCmHz_int);
+					
+U11 : FF
+	port map (	Enable => Clk1Hz_int,
+					Clk    => Clk100MHz,
+					Min    => BCD_M,
+					Cin    => BCD_C,
+					Din    => BCD_D,
+					Uin    => BCD_U,
+					Mout   => perm_M,
+					Cout   => perm_C,
+					Dout   => perm_D,
+					Uout   => perm_U);
 
 end Behavioral;

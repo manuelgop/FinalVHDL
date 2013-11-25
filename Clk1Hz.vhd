@@ -1,19 +1,21 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-entity RefreshDisplay is
-	port( Rst : in STD_LOGIC;
-			Clk : in STD_LOGIC;
-			ClkOut : out STD_LOGIC);	
-end RefreshDisplay;
+entity Clk1Hz is
 
-architecture Behavioral of RefreshDisplay is
+port (	Rst    : in  STD_LOGIC;
+			Clk    : in  STD_LOGIC;
+			ClkOut : out STD_LOGIC);
+
+end Clk1Hz;
+
+architecture Behavioral of Clk1Hz is
 
 -- CONSTANTS
-constant Fosc : integer := 100000000; -- Nexys 3 oscilator frequency
-constant Fdiv : integer := 800; -- Desired frequency
+constant Fosc : integer := 100000000; 	-- Nexys 3 oscilator frequency
+constant Fdiv : integer := 2;		-- Desired frequency
 constant CtaMax : integer := Fosc / Fdiv;
 -- EMBEDDED
 signal Count : integer range 0 to CtaMax;
@@ -33,5 +35,5 @@ begin
 			end if;
 		end if;
 	end process;
-	
+
 end Behavioral;

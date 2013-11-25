@@ -7,14 +7,13 @@ entity StateMachine is
 	port( Rst       : in  STD_LOGIC;
 			EnableClk : in  STD_LOGIC;
 			Clk       : in  STD_LOGIC;
-			cdist     : in  STD_LOGIC_VECTOR (14 downto 0);
 			outsig    : out STD_LOGIC);
 end StateMachine;
 
 architecture Behavioral of StateMachine is
 
 -- EMBEDDED and CONSTANTS
-	constant TimeMax  : natural := 19450;
+	constant TimeMax  : natural := 500000;
 	
 -- EMBEDDED
 	signal period     : natural range 0 to TimeMax;
@@ -22,7 +21,7 @@ architecture Behavioral of StateMachine is
 	
 -- STATES DEFNITION
 	-- default binary state codes
-	type   state_values is (ST0,ST1,ST2,ST3);
+	type   state_values is (ST0,ST1);
 	signal pres_state, next_state: state_values;
 
 begin
@@ -49,21 +48,15 @@ begin
 -- MODULE 2 -----------------------------------------------
 -----------------------------------------------------------
 -- Upper section of state machine -------------------------
-  NextState: process (pres_state,cdist)
+  NextState: process (pres_state)
   begin
     case pres_state is
       when ST0 =>
         next_state <= ST1;
         period <= 5;
       when ST1 =>    
-        next_state <= ST2;
-		  period <= 750;
-      when ST2 =>
-        next_state <= ST3;
-        period <= conv_integer(cdist);
-      when ST3 =>
         next_state <= ST0;
-		  period <= 200;
+		  period <= 499995;
     end case;
   end process NextState;
   -----------------------------------------------------------
@@ -76,8 +69,6 @@ begin
     case pres_state is
 	   when ST0    => outsig <= '1';
 		when ST1    => outsig <= '0';
-		when ST2    => outsig <= '0';
-		when ST3    => outsig <= '0';
       when others => outsig <= '0';
 	 end case;
   end process;

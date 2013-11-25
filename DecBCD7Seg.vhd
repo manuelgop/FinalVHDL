@@ -2,29 +2,32 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity DecBCD7Seg is
-	port( BCD : in  STD_LOGIC_VECTOR (3 downto 0);
-			Seg : out STD_LOGIC_VECTOR (7 downto 0));
+	port(	BCD : in STD_LOGIC_VECTOR(3 downto 0);
+			Seg : out STD_LOGIC_VECTOR(7 downto 0));
 end DecBCD7Seg;
 
 architecture Behavioral of DecBCD7Seg is
 
 begin
+	
 	with BCD select
-		Seg <= not x"7E" when x"0",
-				 not x"30" when x"1",
-				 not x"6D" when x"2",
-				 not x"79" when x"3",
-				 not x"33" when x"4",
-				 not x"5B" when x"5",
-				 not x"5F" when x"6",
-				 not x"70" when x"7",
-				 not x"7F" when x"8",
-				 not x"7B" when x"9",
-				 not x"77" when x"A",
-				 not x"1F" when x"B",
-				 not x"4E" when x"C",
-				 not x"3D" when x"D",
-				 not x"4F" when x"E",
-				 not x"47" when others;
+	     -- .gfedcba
+	Seg <= "11000000" when X"0",
+			 "11111001" when X"1",
+			 "10100100" when X"2",
+			 "10110000" when X"3",
+			 "10011001" when X"4",
+			 "10010010" when X"5",
+			 "10000010" when X"6",
+			 "11111000" when X"7",
+			 "10000000" when X"8",
+			 "10010000" when X"9",
+			 "10001000" when X"A",
+			 "10000011" when X"B",
+			 "11000110" when X"C",
+			 "10100001" when X"D",
+			 "10000110" when X"E",
+			 "10001110" when X"F",
+			 "11111111" when others;
+			 
 end Behavioral;
-

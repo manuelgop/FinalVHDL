@@ -23,7 +23,7 @@ begin
 	process (Rst, Clk, EnableClk, EnableIn, Count)
 	begin
 		if Rst = '1' then Count <= (others => '0');
-		elsif (rising_edge(Clk) and EnableClk = '1' and EnableIn = '1') then Count <= Count + 1;
+		elsif ((rising_edge(Clk)) and (EnableClk = '1') and (EnableIn = '1')) then Count <= Count + 1;
 		end if;
 		Cuenta <= Count;
 	end process;

@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.ncd
-OUTFILE=C:\Users\Andres\Documents\GitHub\FinalVHDL\Top.bit
+INFILE=C:\Projects_SistDigAv\Ultra\Top.ncd
+OUTFILE=C:\Projects_SistDigAv\Ultra\Top.bit
 FAMILY=Spartan6
 PART=xc6slx16-3csg324
-WORKINGDIR=C:\Users\Andres\Documents\GitHub\FinalVHDL
+WORKINGDIR=C:\Projects_SistDigAv\Ultra
 LICENSE=WebPack
-USER_INFO=210725930_0_0_061
+USER_INFO=210786868_0_0_277
