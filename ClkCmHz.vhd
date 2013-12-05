@@ -15,7 +15,7 @@ architecture Behavioral of ClkCmHz is
 
 -- CONSTANTS
 constant Fosc : integer := 100000000; 	-- Nexys 3 oscilator frequency
-constant Fdiv : integer := 15000;		-- Desired frequency
+constant Fdiv : integer := 17170;		-- Desired frequency
 constant CtaMax : integer := Fosc / Fdiv;
 -- EMBEDDED
 signal Count : integer range 0 to CtaMax;

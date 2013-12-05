@@ -1,32 +1,19 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    14:38:02 11/22/2013 
--- Design Name: 
--- Module Name:    Ultra - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity Top is
-    Port ( Input     : in  STD_LOGIC;
-           Output    : inout STD_LOGIC;
-			  Rst       : in  STD_LOGIC;
-			  Clk100MHz : in  STD_LOGIC;
-			  Disp      : out STD_LOGIC_VECTOR (3 downto 0);
-			  Seg       : out STD_LOGIC_VECTOR (7 downto 0));
+    Port ( Rst        : in    STD_LOGIC;
+			  Clk100MHz  : in    STD_LOGIC;
+			  Load       : in    STD_LOGIC;
+			  Input      : in    STD_LOGIC;
+			  Input2     : in    STD_LOGIC;
+           Output     : inout STD_LOGIC;
+			  Output2    : inout STD_LOGIC;
+			  Disp       : out   STD_LOGIC_VECTOR (3 downto 0);
+			  Seg        : out   STD_LOGIC_VECTOR (7 downto 0);
+			  OutMotor1  : out   STD_LOGIC_VECTOR (3 downto 0);
+			  OutMotor2  : out   STD_LOGIC_VECTOR (3 downto 0);
+			  OutMotor3  : out   STD_LOGIC_VECTOR (3 downto 0));
 end Top;
 
 architecture Behavioral of Top is
@@ -112,22 +99,50 @@ component FF
 			Uout   : out STD_LOGIC_VECTOR (3 downto 0));
 end component;
 
--- Embedded Signals
-signal c_dist         : STD_LOGIC_VECTOR (14 downto 0);
+component Compare
+	port(	Min  	 : in  STD_LOGIC_VECTOR (3 downto 0);
+			Cin    : in  STD_LOGIC_VECTOR (3 downto 0);
+			Din    : in  STD_LOGIC_VECTOR (3 downto 0);
+			Uin    : in  STD_LOGIC_VECTOR (3 downto 0);
+			MMin 	 : in  STD_LOGIC_VECTOR (3 downto 0);
+			CCin   : in  STD_LOGIC_VECTOR (3 downto 0);
+			DDin   : in  STD_LOGIC_VECTOR (3 downto 0);
+			UUin   : in  STD_LOGIC_VECTOR (3 downto 0);
+			M1     : out STD_LOGIC_VECTOR (3 downto 0);
+			M2     : out STD_LOGIC_VECTOR (3 downto 0));
+end component;
+
+-- 1 bit Embedded Signals
 signal Clk1MHz_int    : STD_LOGIC;
+signal ClkRefresh_int : STD_LOGIC;
+signal ClkCmHz_int	 : STD_LOGIC;
+signal Clk1Hz_int     : STD_LOGIC;
+
+-- 2 bit Embedded Signals
+signal Sel_int        : STD_LOGIC_VECTOR (1 downto 0);
+
+-- 3 bit Embedded Signals
 signal BCD_M		    : STD_LOGIC_VECTOR (3 downto 0);
 signal BCD_C		    : STD_LOGIC_VECTOR (3 downto 0);
 signal BCD_D		    : STD_LOGIC_VECTOR (3 downto 0);
 signal BCD_U		    : STD_LOGIC_VECTOR (3 downto 0);
-signal Sel_int        : STD_LOGIC_VECTOR (1 downto 0);
+signal BCD_M2		    : STD_LOGIC_VECTOR (3 downto 0);
+signal BCD_C2		    : STD_LOGIC_VECTOR (3 downto 0);
+signal BCD_D2		    : STD_LOGIC_VECTOR (3 downto 0);
+signal BCD_U2		    : STD_LOGIC_VECTOR (3 downto 0);
 signal Distancia_int  : STD_LOGIC_VECTOR (3 downto 0);
-signal ClkRefresh_int : STD_LOGIC;
-signal ClkCmHz_int	 : STD_LOGIC;
 signal perm_M         : STD_LOGIC_VECTOR (3 downto 0);
 signal perm_C         : STD_LOGIC_VECTOR (3 downto 0);
 signal perm_D         : STD_LOGIC_VECTOR (3 downto 0);
 signal perm_U         : STD_LOGIC_VECTOR (3 downto 0);
-signal Clk1Hz_int     : STD_LOGIC;
+signal perm_M2        : STD_LOGIC_VECTOR (3 downto 0);
+signal perm_C2        : STD_LOGIC_VECTOR (3 downto 0);
+signal perm_D2        : STD_LOGIC_VECTOR (3 downto 0);
+signal perm_U2        : STD_LOGIC_VECTOR (3 downto 0);
+signal l_M2           : STD_LOGIC_VECTOR (3 downto 0);
+signal l_C2           : STD_LOGIC_VECTOR (3 downto 0);
+signal l_D2           : STD_LOGIC_VECTOR (3 downto 0);
+signal l_U2           : STD_LOGIC_VECTOR (3 downto 0);
 
 begin
 
@@ -199,5 +214,57 @@ U11 : FF
 					Cout   => perm_C,
 					Dout   => perm_D,
 					Uout   => perm_U);
+
+U12 : Cont0a9999
+	port map (	SalSM    => Output2,
+					Enable   => Input2,
+					Rst      => Rst,
+					Clk      => ClkCmHz_int,
+					Millares => BCD_M2,
+					Centenas	=> BCD_C2,
+					Decenas  => BCD_D2,
+					Unidades => BCD_U2);
+					
+U13 : FF
+	port map (	Enable => Clk1Hz_int,
+					Clk    => Clk100MHz,
+					Min    => BCD_M2,
+					Cin    => BCD_C2,
+					Din    => BCD_D2,
+					Uin    => BCD_U2,
+					Mout   => perm_M2,
+					Cout   => perm_C2,
+					Dout   => perm_D2,
+					Uout   => perm_U2);
+					
+U14 : FF
+	port map (	Enable => Load,
+					Clk    => Clk100MHz,
+					Min    => perm_M2,
+					Cin    => perm_C2,
+					Din    => perm_D2,
+					Uin    => perm_U2,
+					Mout   => l_M2,
+					Cout   => l_C2,
+					Dout   => l_D2,
+					Uout   => l_U2);
+					
+U15 : Compare
+	port map (	Min    => perm_M2,
+					Cin    => perm_C2,
+					Din    => perm_D2,
+					Uin    => perm_U2,
+					MMin   => l_M2,
+					CCin   => l_C2,
+					DDin   => l_D2,
+					UUin   => l_U2,
+					M1     => OutMotor2,
+					M2     => OutMotor3);
+					
+Output2 <= OutPut;
+OutMotor1(0) <= perm_D(2);
+OutMotor1(1) <= perm_D(3);
+OutMotor1(2) <= perm_C(0);
+OutMotor1(3) <= perm_C(1);
 
 end Behavioral;

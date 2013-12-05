@@ -1,16 +1,38 @@
- NET "Rst"       LOC = "B8";
- NET "Clk100Mhz" LOC = "V10";
- NET "Seg<7>"    LOC = "M13";
- NET "Seg<6>"    LOC = "L14"; 
- NET "Seg<5>"    LOC = "N14";
- NET "Seg<4>"    LOC = "M14";
- NET "Seg<3>"    LOC = "U18";
- NET "Seg<2>"    LOC = "U17";
- NET "Seg<1>"    LOC = "T18";
- NET "Seg<0>"    LOC = "T17";
- NET "Disp<3>"   LOC = "P17";
- NET "Disp<2>"   LOC = "P18";
- NET "Disp<1>"   LOC = "N15";
- NET "Disp<0>"   LOC = "N16"; 
- NET "Input"     LOC = "N10";
- NET "Output"    LOC = "P11";
+ # Reset & Clock & Load
+ NET "Load"         LOC = "A8";
+ NET "Rst"          LOC = "B8";
+ NET "Clk100Mhz"    LOC = "V10";
+ 
+ # 7Segment Display
+ NET "Seg<7>"       LOC = "M13";
+ NET "Seg<6>"       LOC = "L14"; 
+ NET "Seg<5>"       LOC = "N14";
+ NET "Seg<4>"       LOC = "M14";
+ NET "Seg<3>"       LOC = "U18";
+ NET "Seg<2>"       LOC = "U17";
+ NET "Seg<1>"       LOC = "T18";
+ NET "Seg<0>"       LOC = "T17";
+ NET "Disp<3>"      LOC = "P17";
+ NET "Disp<2>"      LOC = "P18";
+ NET "Disp<1>"      LOC = "N15";
+ NET "Disp<0>"   	  LOC = "N16";
+
+ # Sensor's in's & out's
+ NET "Input"        LOC = "N10";
+ NET "Output"       LOC = "P11";
+ NET "Input2"       LOC = "F11";
+ NET "Output2"      LOC = "E11";
+ 
+ # Motor's out's
+ NET "OutMotor1<0>" LOC = "K2";
+ NET "OutMotor1<1>" LOC = "K1";
+ NET "OutMotor1<2>" LOC = "L4";
+ NET "OutMotor1<3>" LOC = "L3";
+ NET "OutMotor2<0>" LOC = "H3";
+ NET "OutMotor2<1>" LOC = "L7";
+ NET "OutMotor2<2>" LOC = "K6";
+ NET "OutMotor2<3>" LOC = "G3";
+ NET "OutMotor3<0>" LOC = "G1";
+ NET "OutMotor3<1>" LOC = "J7";
+ NET "OutMotor3<2>" LOC = "J6";
+ NET "OutMotor3<3>" LOC = "F2";

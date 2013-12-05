@@ -1,16 +1,16 @@
-Release 14.6 - xst P.68d (nt)
+Release 14.6 - xst P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: Top.prj
 
@@ -105,40 +105,43 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\StateMachine.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\StateMachine.vhd" into library work
 Parsing entity <StateMachine>.
 Parsing architecture <Behavioral> of entity <statemachine>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\SelAnodo.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\SelAnodo.vhd" into library work
 Parsing entity <SelAnodo>.
 Parsing architecture <Behavioral> of entity <selanodo>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\RefreshDisplay.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\RefreshDisplay.vhd" into library work
 Parsing entity <RefreshDisplay>.
 Parsing architecture <Behavioral> of entity <refreshdisplay>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\Mux4to1.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\Mux4to1.vhd" into library work
 Parsing entity <Mux4to1>.
 Parsing architecture <Behavioral> of entity <mux4to1>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\FF.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\FF.vhd" into library work
 Parsing entity <FF>.
 Parsing architecture <Behavioral> of entity <ff>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\DecBCD7Seg.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\DecBCD7Seg.vhd" into library work
 Parsing entity <DecBCD7Seg>.
 Parsing architecture <Behavioral> of entity <decbcd7seg>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\Cont0a9999.vhd" into library work
 Parsing entity <Cont0a9999>.
 Parsing architecture <Behavioral> of entity <cont0a9999>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\Cont0a3.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\Cont0a3.vhd" into library work
 Parsing entity <Cont0a3>.
 Parsing architecture <Behavioral> of entity <cont0a3>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\ClkCmHz.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\Compare.vhd" into library work
+Parsing entity <Compare>.
+Parsing architecture <Behavioral> of entity <compare>.
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\ClkCmHz.vhd" into library work
 Parsing entity <ClkCmHz>.
 Parsing architecture <Behavioral> of entity <clkcmhz>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\Clk1MHz.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\Clk1MHz.vhd" into library work
 Parsing entity <Clk1MHz>.
 Parsing architecture <Behavioral> of entity <clk1mhz>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\Clk1Hz.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\Clk1Hz.vhd" into library work
 Parsing entity <Clk1Hz>.
 Parsing architecture <Behavioral> of entity <clk1hz>.
-Parsing VHDL file "C:\Projects_SistDigAv\Ultra\Ultra.vhd" into library work
+Parsing VHDL file "C:\Projects_SistDigAv\Ultra2\Ultra.vhd" into library work
 Parsing entity <Top>.
 Parsing architecture <Behavioral> of entity <top>.
 
@@ -149,7 +152,7 @@ Parsing architecture <Behavioral> of entity <top>.
 Elaborating entity <Top> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <StateMachine> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "C:\Projects_SistDigAv\Ultra\StateMachine.vhd" Line 72. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Projects_SistDigAv\Ultra2\StateMachine.vhd" Line 72. Case statement is complete. others clause is never selected
 
 Elaborating entity <Clk1Hz> (architecture <Behavioral>) from library <work>.
 
@@ -171,18 +174,20 @@ Elaborating entity <ClkCmHz> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <FF> (architecture <Behavioral>) from library <work>.
 
+Elaborating entity <Compare> (architecture <Behavioral>) from library <work>.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <Top>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\Ultra.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\Ultra.vhd".
     Summary:
 	no macro.
 Unit <Top> synthesized.
 
 Synthesizing Unit <StateMachine>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\StateMachine.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\StateMachine.vhd".
     Found 1-bit register for signal <pres_state>.
     Found 19-bit register for signal <count>.
     Found 19-bit adder for signal <count[18]_GND_7_o_add_0_OUT> created at line 39.
@@ -195,7 +200,7 @@ Synthesizing Unit <StateMachine>.
 Unit <StateMachine> synthesized.
 
 Synthesizing Unit <Clk1Hz>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\Clk1Hz.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\Clk1Hz.vhd".
     Found 26-bit register for signal <Count>.
     Found 1-bit register for signal <ClkOut>.
     Found 26-bit adder for signal <Count[25]_GND_8_o_add_1_OUT> created at line 33.
@@ -206,7 +211,7 @@ Synthesizing Unit <Clk1Hz>.
 Unit <Clk1Hz> synthesized.
 
 Synthesizing Unit <Clk1MHz>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\Clk1MHz.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\Clk1MHz.vhd".
     Found 7-bit register for signal <Count>.
     Found 1-bit register for signal <ClkOut>.
     Found 7-bit adder for signal <Count[6]_GND_9_o_add_1_OUT> created at line 33.
@@ -217,7 +222,7 @@ Synthesizing Unit <Clk1MHz>.
 Unit <Clk1MHz> synthesized.
 
 Synthesizing Unit <Cont0a9999>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\Cont0a9999.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\Cont0a9999.vhd".
     Found 4-bit register for signal <CountDec>.
     Found 4-bit register for signal <CountCen>.
     Found 4-bit register for signal <CountMil>.
@@ -233,14 +238,14 @@ Synthesizing Unit <Cont0a9999>.
 Unit <Cont0a9999> synthesized.
 
 Synthesizing Unit <Mux4to1>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\Mux4to1.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\Mux4to1.vhd".
     Found 4-bit 4-to-1 multiplexer for signal <Distancia> created at line 16.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <Mux4to1> synthesized.
 
 Synthesizing Unit <Cont0a3>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\Cont0a3.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\Cont0a3.vhd".
     Found 2-bit register for signal <Count>.
     Found 2-bit adder for signal <Count[1]_GND_12_o_add_0_OUT> created at line 23.
     Summary:
@@ -249,7 +254,7 @@ Synthesizing Unit <Cont0a3>.
 Unit <Cont0a3> synthesized.
 
 Synthesizing Unit <RefreshDisplay>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\RefreshDisplay.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\RefreshDisplay.vhd".
     Found 17-bit register for signal <Count>.
     Found 1-bit register for signal <ClkOut>.
     Found 17-bit adder for signal <Count[16]_GND_13_o_add_1_OUT> created at line 31.
@@ -260,21 +265,21 @@ Synthesizing Unit <RefreshDisplay>.
 Unit <RefreshDisplay> synthesized.
 
 Synthesizing Unit <SelAnodo>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\SelAnodo.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\SelAnodo.vhd".
     Found 4x4-bit Read Only RAM for signal <Anodo>
     Summary:
 	inferred   1 RAM(s).
 Unit <SelAnodo> synthesized.
 
 Synthesizing Unit <DecBCD7Seg>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\DecBCD7Seg.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\DecBCD7Seg.vhd".
     Found 16x8-bit Read Only RAM for signal <Seg>
     Summary:
 	inferred   1 RAM(s).
 Unit <DecBCD7Seg> synthesized.
 
 Synthesizing Unit <ClkCmHz>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\ClkCmHz.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\ClkCmHz.vhd".
     Found 13-bit register for signal <Count>.
     Found 1-bit register for signal <ClkOut>.
     Found 13-bit adder for signal <Count[12]_GND_16_o_add_1_OUT> created at line 33.
@@ -285,7 +290,7 @@ Synthesizing Unit <ClkCmHz>.
 Unit <ClkCmHz> synthesized.
 
 Synthesizing Unit <FF>.
-    Related source file is "C:\Projects_SistDigAv\Ultra\FF.vhd".
+    Related source file is "C:\Projects_SistDigAv\Ultra2\FF.vhd".
     Found 4-bit register for signal <Cout>.
     Found 4-bit register for signal <Dout>.
     Found 4-bit register for signal <Uout>.
@@ -294,6 +299,27 @@ Synthesizing Unit <FF>.
 	inferred  16 D-type flip-flop(s).
 Unit <FF> synthesized.
 
+Synthesizing Unit <Compare>.
+    Related source file is "C:\Projects_SistDigAv\Ultra2\Compare.vhd".
+    Found 15-bit adder for signal <n0051[14:0]> created at line 27.
+    Found 16-bit adder for signal <n0054[15:0]> created at line 27.
+    Found 17-bit adder for signal <n0057[16:0]> created at line 27.
+    Found 15-bit adder for signal <n0060[14:0]> created at line 28.
+    Found 16-bit adder for signal <n0063[15:0]> created at line 28.
+    Found 17-bit adder for signal <n0066[16:0]> created at line 28.
+    Found 4x10-bit multiplier for signal <Min[3]_PWR_18_o_MuLt_0_OUT> created at line 27.
+    Found 4x7-bit multiplier for signal <Cin[3]_PWR_18_o_MuLt_1_OUT> created at line 27.
+    Found 4x4-bit multiplier for signal <Din[3]_PWR_18_o_MuLt_3_OUT> created at line 27.
+    Found 4x10-bit multiplier for signal <MMin[3]_PWR_18_o_MuLt_6_OUT> created at line 28.
+    Found 4x7-bit multiplier for signal <CCin[3]_PWR_18_o_MuLt_7_OUT> created at line 28.
+    Found 4x4-bit multiplier for signal <DDin[3]_PWR_18_o_MuLt_9_OUT> created at line 28.
+    Found 32-bit comparator greater for signal <base[31]_medida[31]_LessThan_13_o> created at line 32
+    Summary:
+	inferred   6 Multiplier(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <Compare> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
@@ -301,31 +327,38 @@ Macro Statistics
 # RAMs                                                 : 2
  16x8-bit single-port Read Only RAM                    : 1
  4x4-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 10
+# Multipliers                                          : 6
+ 10x4-bit multiplier                                   : 2
+ 4x4-bit multiplier                                    : 2
+ 7x4-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 20
  13-bit adder                                          : 1
- 17-bit adder                                          : 1
+ 15-bit adder                                          : 2
+ 16-bit adder                                          : 2
+ 17-bit adder                                          : 3
  19-bit adder                                          : 1
  2-bit adder                                           : 1
  26-bit adder                                          : 1
- 4-bit adder                                           : 4
+ 4-bit adder                                           : 8
  7-bit adder                                           : 1
-# Registers                                            : 19
+# Registers                                            : 31
  1-bit register                                        : 5
  13-bit register                                       : 1
  17-bit register                                       : 1
  19-bit register                                       : 1
  2-bit register                                        : 1
  26-bit register                                       : 1
- 4-bit register                                        : 8
+ 4-bit register                                        : 20
  7-bit register                                        : 1
-# Comparators                                          : 1
+# Comparators                                          : 2
  19-bit comparator equal                               : 1
-# Multiplexers                                         : 10
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 14
  13-bit 2-to-1 multiplexer                             : 1
  17-bit 2-to-1 multiplexer                             : 1
  19-bit 2-to-1 multiplexer                             : 1
  26-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 4
+ 4-bit 2-to-1 multiplexer                              : 8
  4-bit 4-to-1 multiplexer                              : 1
  7-bit 2-to-1 multiplexer                              : 1
 
@@ -347,6 +380,13 @@ Unit <Clk1MHz> synthesized (advanced).
 Synthesizing (advanced) Unit <ClkCmHz>.
 The following registers are absorbed into counter <Count>: 1 register on signal <Count>.
 Unit <ClkCmHz> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Compare>.
+	The following adders/subtractors are grouped into adder tree <Madd_n0057[16:0]1> :
+ 	<Madd_n0051[14:0]> in block <Compare>, 	<Madd_n0054[15:0]> in block <Compare>, 	<Madd_n0057[16:0]> in block <Compare>.
+	The following adders/subtractors are grouped into adder tree <Madd_n0066[16:0]1> :
+ 	<Madd_n0060[14:0]> in block <Compare>, 	<Madd_n0063[15:0]> in block <Compare>, 	<Madd_n0066[16:0]> in block <Compare>.
+Unit <Compare> synthesized (advanced).
 
 Synthesizing (advanced) Unit <Cont0a3>.
 The following registers are absorbed into counter <Count>: 1 register on signal <Count>.
@@ -395,6 +435,17 @@ Synthesizing (advanced) Unit <StateMachine>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
 Unit <StateMachine> synthesized (advanced).
 
+Synthesizing (advanced) Unit <Top>.
+	Multiplier <U15/Mmult_DDin[3]_PWR_18_o_MuLt_9_OUT> in block <Top> and adder/subtractor <ADDER_FOR_MULTADD_Madd2> in block <Top> are combined into a MAC<U15/Maddsub_DDin[3]_PWR_18_o_MuLt_9_OUT>.
+	Multiplier <U15/Mmult_CCin[3]_PWR_18_o_MuLt_7_OUT> in block <Top> and adder/subtractor <ADDER_FOR_MULTADD_Madd1> in block <Top> are combined into a MAC<U15/Maddsub_CCin[3]_PWR_18_o_MuLt_7_OUT>.
+	Multiplier <U15/Mmult_Din[3]_PWR_18_o_MuLt_3_OUT> in block <Top> and adder/subtractor <ADDER_FOR_MULTADD_Madd5> in block <Top> are combined into a MAC<U15/Maddsub_Din[3]_PWR_18_o_MuLt_3_OUT>.
+	Multiplier <U15/Mmult_MMin[3]_PWR_18_o_MuLt_6_OUT> in block <Top> and adder/subtractor <ADDER_FOR_MULTADD_Madd> in block <Top> are combined into a MAC<U15/Maddsub_MMin[3]_PWR_18_o_MuLt_6_OUT>.
+	The following registers are also absorbed by the MAC: <U14/Uout> in block <Top>.
+	Multiplier <U15/Mmult_Cin[3]_PWR_18_o_MuLt_1_OUT> in block <Top> and adder/subtractor <ADDER_FOR_MULTADD_Madd4> in block <Top> are combined into a MAC<U15/Maddsub_Cin[3]_PWR_18_o_MuLt_1_OUT>.
+	Multiplier <U15/Mmult_Min[3]_PWR_18_o_MuLt_0_OUT> in block <Top> and adder/subtractor <ADDER_FOR_MULTADD_Madd3> in block <Top> are combined into a MAC<U15/Maddsub_Min[3]_PWR_18_o_MuLt_0_OUT>.
+	The following registers are also absorbed by the MAC: <U13/Uout> in block <Top>.
+Unit <Top> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
@@ -402,20 +453,25 @@ Macro Statistics
 # RAMs                                                 : 2
  16x8-bit single-port distributed Read Only RAM        : 1
  4x4-bit single-port distributed Read Only RAM         : 1
-# Counters                                             : 10
+# MACs                                                 : 6
+ 10x4-to-17-bit MAC                                    : 2
+ 4x4-to-17-bit MAC                                     : 2
+ 7x4-to-17-bit MAC                                     : 2
+# Counters                                             : 14
  13-bit up counter                                     : 1
  17-bit up counter                                     : 1
  19-bit up counter                                     : 1
  2-bit up counter                                      : 1
  26-bit up counter                                     : 1
- 4-bit up counter                                      : 4
+ 4-bit up counter                                      : 8
  7-bit up counter                                      : 1
-# Registers                                            : 21
- Flip-Flops                                            : 21
-# Comparators                                          : 1
+# Registers                                            : 49
+ Flip-Flops                                            : 49
+# Comparators                                          : 2
  19-bit comparator equal                               : 1
-# Multiplexers                                         : 1
- 4-bit 4-to-1 multiplexer                              : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 4
+ 1-bit 4-to-1 multiplexer                              : 4
 
 =========================================================================
 
@@ -423,15 +479,13 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 
-Optimizing unit <FF> ...
-
 Optimizing unit <Top> ...
 
 Optimizing unit <Cont0a9999> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 3.
 
 Final Macro Processing ...
 
@@ -439,8 +493,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 121
- Flip-Flops                                            : 121
+# Registers                                            : 153
+ Flip-Flops                                            : 153
 
 =========================================================================
 
@@ -463,27 +517,30 @@ Top Level Output File Name         : Top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 355
+# BELS                             : 403
 #      GND                         : 1
-#      INV                         : 10
-#      LUT1                        : 53
-#      LUT2                        : 34
-#      LUT3                        : 28
-#      LUT4                        : 35
-#      LUT5                        : 6
-#      LUT6                        : 41
-#      MUXCY                       : 71
+#      INV                         : 14
+#      LUT1                        : 56
+#      LUT2                        : 36
+#      LUT3                        : 13
+#      LUT4                        : 62
+#      LUT5                        : 5
+#      LUT6                        : 61
+#      MUXCY                       : 79
 #      VCC                         : 1
 #      XORCY                       : 75
-# FlipFlops/Latches                : 121
+# FlipFlops/Latches                : 153
 #      FDC                         : 64
-#      FDCE                        : 37
-#      FDE                         : 20
-# Clock Buffers                    : 1
+#      FDCE                        : 53
+#      FDE                         : 36
+# Clock Buffers                    : 2
+#      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 15
-#      IBUF                        : 2
-#      OBUF                        : 13
+# IO Buffers                       : 30
+#      IBUF                        : 4
+#      OBUF                        : 26
+# DSPs                             : 6
+#      DSP48A1                     : 6
 
 Device utilization summary:
 ---------------------------
@@ -492,23 +549,24 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             121  out of  18224     0%  
- Number of Slice LUTs:                  207  out of   9112     2%  
-    Number used as Logic:               207  out of   9112     2%  
+ Number of Slice Registers:             153  out of  18224     0%  
+ Number of Slice LUTs:                  247  out of   9112     2%  
+    Number used as Logic:               247  out of   9112     2%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    217
-   Number with an unused Flip Flop:      96  out of    217    44%  
-   Number with an unused LUT:            10  out of    217     4%  
-   Number of fully used LUT-FF pairs:   111  out of    217    51%  
-   Number of unique control sets:         9
+ Number of LUT Flip Flop pairs used:    273
+   Number with an unused Flip Flop:     120  out of    273    43%  
+   Number with an unused LUT:            26  out of    273     9%  
+   Number of fully used LUT-FF pairs:   127  out of    273    46%  
+   Number of unique control sets:        13
 
 IO Utilization: 
- Number of IOs:                          16
- Number of bonded IOBs:                  16  out of    232     6%  
+ Number of IOs:                          31
+ Number of bonded IOBs:                  31  out of    232    13%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of DSP48A1s:                      6  out of     32    18%  
 
 ---------------------------
 Partition Resource Summary:
@@ -531,10 +589,9 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-Clk100MHz                          | BUFGP                  | 105   |
-U10/ClkOut                         | NONE(U4/CountCen_3)    | 16    |
+Clk100MHz                          | BUFGP                  | 127   |
+U10/ClkOut                         | BUFG                   | 32    |
 -----------------------------------+------------------------+-------+
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -544,9 +601,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.641ns (Maximum Frequency: 215.459MHz)
-   Minimum input arrival time before clock: 4.653ns
-   Maximum output required time after clock: 6.244ns
+   Minimum period: 5.000ns (Maximum Frequency: 199.998MHz)
+   Minimum input arrival time before clock: 4.940ns
+   Maximum output required time after clock: 13.285ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -555,24 +612,24 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Clk100MHz'
-  Clock period: 4.641ns (frequency: 215.459MHz)
-  Total number of paths / destination ports: 8583 / 126
+  Clock period: 5.000ns (frequency: 199.998MHz)
+  Total number of paths / destination ports: 7688 / 162
 -------------------------------------------------------------------------
-Delay:               4.641ns (Levels of Logic = 22)
-  Source:            U1/count_9 (FF)
+Delay:               5.000ns (Levels of Logic = 22)
+  Source:            U1/count_15 (FF)
   Destination:       U1/count_18 (FF)
   Source Clock:      Clk100MHz rising
   Destination Clock: Clk100MHz rising
 
-  Data Path: U1/count_9 to U1/count_18
+  Data Path: U1/count_15 to U1/count_18
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.447   0.981  U1/count_9 (U1/count_9)
-     LUT6:I0->O            3   0.203   0.995  U1/period[18]_count[18]_equal_2_o195 (U1/period[18]_count[18]_equal_2_o194)
-     LUT6:I1->O            9   0.203   0.830  U1/period[18]_count[18]_equal_2_o197_1 (U1/period[18]_count[18]_equal_2_o197)
-     LUT3:I2->O            1   0.205   0.000  U1/Mcount_count_lut<0> (U1/Mcount_count_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  U1/Mcount_count_cy<0> (U1/Mcount_count_cy<0>)
+     FDCE:C->Q             4   0.447   1.028  U1/count_15 (U1/count_15)
+     LUT6:I1->O            1   0.203   0.580  U1/period[18]_count[18]_equal_2_o191 (U1/period[18]_count[18]_equal_2_o19)
+     LUT6:I5->O           17   0.205   1.132  U1/period[18]_count[18]_equal_2_o192 (U1/period[18]_count[18]_equal_2_o191)
+     LUT6:I4->O            1   0.203   0.579  U1/period[18]_count[18]_equal_2_o_inv1 (U1/period[18]_count[18]_equal_2_o_inv)
+     MUXCY:CI->O           1   0.019   0.000  U1/Mcount_count_cy<0> (U1/Mcount_count_cy<0>)
      MUXCY:CI->O           1   0.019   0.000  U1/Mcount_count_cy<1> (U1/Mcount_count_cy<1>)
      MUXCY:CI->O           1   0.019   0.000  U1/Mcount_count_cy<2> (U1/Mcount_count_cy<2>)
      MUXCY:CI->O           1   0.019   0.000  U1/Mcount_count_cy<3> (U1/Mcount_count_cy<3>)
@@ -593,35 +650,35 @@ Delay:               4.641ns (Levels of Logic = 22)
      XORCY:CI->O           1   0.180   0.000  U1/Mcount_count_xor<18> (U1/Mcount_count18)
      FDCE:D                    0.102          U1/count_18
     ----------------------------------------
-    Total                      4.641ns (1.835ns logic, 2.806ns route)
-                                       (39.5% logic, 60.5% route)
+    Total                      5.000ns (1.682ns logic, 3.318ns route)
+                                       (33.6% logic, 66.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'U10/ClkOut'
-  Clock period: 3.469ns (frequency: 288.305MHz)
-  Total number of paths / destination ports: 144 / 28
+  Clock period: 3.497ns (frequency: 285.923MHz)
+  Total number of paths / destination ports: 288 / 56
 -------------------------------------------------------------------------
-Delay:               3.469ns (Levels of Logic = 2)
-  Source:            U4/CountCen_0 (FF)
-  Destination:       U4/CountCen_3 (FF)
+Delay:               3.497ns (Levels of Logic = 2)
+  Source:            U12/CountCen_0 (FF)
+  Destination:       U12/CountCen_3 (FF)
   Source Clock:      U10/ClkOut rising
   Destination Clock: U10/ClkOut rising
 
-  Data Path: U4/CountCen_0 to U4/CountCen_3
+  Data Path: U12/CountCen_0 to U12/CountCen_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             6   0.447   0.992  U4/CountCen_0 (U4/CountCen_0)
-     LUT4:I0->O            2   0.203   0.617  U4/_n0080_inv111 (U4/_n0080_inv11)
-     LUT6:I5->O            4   0.205   0.683  U4/_n0074_inv1 (U4/_n0074_inv)
-     FDCE:CE                   0.322          U4/CountCen_0
+     FDCE:C->Q             7   0.447   1.021  U12/CountCen_0 (U12/CountCen_0)
+     LUT4:I0->O            2   0.203   0.617  U12/_n0080_inv111 (U12/_n0080_inv11)
+     LUT6:I5->O            4   0.205   0.683  U12/_n0074_inv1 (U12/_n0074_inv)
+     FDCE:CE                   0.322          U12/CountCen_0
     ----------------------------------------
-    Total                      3.469ns (1.177ns logic, 2.292ns route)
-                                       (33.9% logic, 66.1% route)
+    Total                      3.497ns (1.177ns logic, 2.320ns route)
+                                       (33.7% logic, 66.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk100MHz'
-  Total number of paths / destination ports: 89 / 89
+  Total number of paths / destination ports: 93 / 93
 -------------------------------------------------------------------------
 Offset:              4.224ns (Levels of Logic = 2)
   Source:            Rst (PAD)
@@ -641,44 +698,54 @@ Offset:              4.224ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'U10/ClkOut'
-  Total number of paths / destination ports: 32 / 32
+  Total number of paths / destination ports: 64 / 64
 -------------------------------------------------------------------------
-Offset:              4.653ns (Levels of Logic = 2)
+Offset:              4.940ns (Levels of Logic = 2)
   Source:            Rst (PAD)
-  Destination:       U4/CountCen_3 (FF)
+  Destination:       U12/CountCen_3 (FF)
   Destination Clock: U10/ClkOut rising
 
-  Data Path: Rst to U4/CountCen_3
+  Data Path: Rst to U12/CountCen_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            87   1.222   1.792  Rst_IBUF (Rst_IBUF)
-     LUT2:I1->O           16   0.205   1.004  U4/Rst_SalSM_OR_54_o1 (U4/Rst_SalSM_OR_54_o)
-     FDCE:CLR                  0.430          U4/CountUni_0
+     LUT2:I1->O           32   0.205   1.291  U12/Rst_SalSM_OR_54_o1 (U12/Rst_SalSM_OR_54_o)
+     FDCE:CLR                  0.430          U12/CountUni_0
     ----------------------------------------
-    Total                      4.653ns (1.857ns logic, 2.796ns route)
-                                       (39.9% logic, 60.1% route)
+    Total                      4.940ns (1.857ns logic, 3.083ns route)
+                                       (37.6% logic, 62.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk100MHz'
-  Total number of paths / destination ports: 177 / 12
+  Total number of paths / destination ports: 1242566 / 25
 -------------------------------------------------------------------------
-Offset:              6.244ns (Levels of Logic = 3)
-  Source:            U6/Count_0 (FF)
-  Destination:       Seg<6> (PAD)
+Offset:              13.285ns (Levels of Logic = 13)
+  Source:            U15/Maddsub_MMin[3]_PWR_18_o_MuLt_6_OUT (DSP)
+  Destination:       OutMotor2<3> (PAD)
   Source Clock:      Clk100MHz rising
 
-  Data Path: U6/Count_0 to Seg<6>
+  Data Path: U15/Maddsub_MMin[3]_PWR_18_o_MuLt_6_OUT to OutMotor2<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            10   0.447   1.221  U6/Count_0 (U6/Count_0)
-     LUT6:I0->O            7   0.203   1.021  U5/Mmux_Distancia11 (Distancia_int<0>)
-     LUT4:I0->O            1   0.203   0.579  U9/Mram_Seg41 (Seg_4_OBUF)
-     OBUF:I->O                 2.571          Seg_4_OBUF (Seg<4>)
+     DSP48A1:CLK->PCOUT47    1   3.114   0.000  U15/Maddsub_MMin[3]_PWR_18_o_MuLt_6_OUT (U15/Maddsub_MMin[3]_PWR_18_o_MuLt_6_OUT_PCOUT_to_U15/Maddsub_CCin[3]_PWR_18_o_MuLt_7_OUT_PCIN_47)
+     DSP48A1:PCIN47->PCOUT47    1   2.265   0.000  U15/Maddsub_CCin[3]_PWR_18_o_MuLt_7_OUT (U15/Maddsub_CCin[3]_PWR_18_o_MuLt_7_OUT_PCOUT_to_U15/Maddsub_DDin[3]_PWR_18_o_MuLt_9_OUT_PCIN_47)
+     DSP48A1:PCIN47->P0    2   2.264   0.864  U15/Maddsub_DDin[3]_PWR_18_o_MuLt_9_OUT (ADDER_FOR_MULTADD_Madd_02)
+     LUT4:I0->O            1   0.203   0.000  U15/Mcompar_base[31]_medida[31]_LessThan_13_o_lut<0> (U15/Mcompar_base[31]_medida[31]_LessThan_13_o_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<0> (U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<1> (U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<2> (U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<3> (U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<4> (U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<5> (U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<6> (U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<6>)
+     MUXCY:CI->O           2   0.213   0.617  U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<7> (U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<7>)
+     LUT3:I2->O            4   0.205   0.683  U15/Mcompar_base[31]_medida[31]_LessThan_13_o_cy<8> (OutMotor3_0_OBUF)
+     OBUF:I->O                 2.571          OutMotor3_3_OBUF (OutMotor3<3>)
     ----------------------------------------
-    Total                      6.244ns (3.424ns logic, 2.820ns route)
-                                       (54.8% logic, 45.2% route)
+    Total                     13.285ns (11.121ns logic, 2.164ns route)
+                                       (83.7% logic, 16.3% route)
 
 =========================================================================
 
@@ -690,8 +757,8 @@ Clock to Setup on destination clock Clk100MHz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-Clk100MHz      |    4.641|         |         |         |
-U10/ClkOut     |    1.322|         |         |         |
+Clk100MHz      |    5.000|         |         |         |
+U10/ClkOut     |    1.398|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock U10/ClkOut
@@ -699,21 +766,21 @@ Clock to Setup on destination clock U10/ClkOut
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-Clk100MHz      |    2.903|         |         |         |
-U10/ClkOut     |    3.469|         |         |         |
+Clk100MHz      |    3.190|         |         |         |
+U10/ClkOut     |    3.497|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.80 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.93 secs
  
 --> 
 
-Total memory usage is 201932 kilobytes
+Total memory usage is 259396 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 
